@@ -40,7 +40,7 @@ export default function About() {
         <span className="italic">When I'm not coding</span>, I enjoy reading, watching educating videos, and writing. I also enjoy{" "}
         <span className="font-medium">learning new things</span>. I am currently
         registered for an {" "}
-        <span className="font-medium">Agile software development programme</span>. 
+        <span className="font-medium">Agile software development programme</span>.
       </p>
     </motion.section>
   );
