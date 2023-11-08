@@ -18,9 +18,9 @@ export default function Intro() {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
+            transition={{
               type: "tween",
-              duration: 0.2,
+              duration: 0.2
             }}
             className="flex items-center justify-center "
           >
@@ -52,16 +52,18 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-10 mt-4 px-4 text-2xl font-medium leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Opeyemi Esther.</span> I'm a{" "}
-        <span className="font-bold">Fullstack developer</span> with{" "}
-        <span className="font-bold">1 year</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="italic font-bold">Frontend,</span>{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="font-bold">Hello, I am Opeyemi Esther Agbaje.</span> I am
+        a <span className="font-bold">Fullstack Developer</span> with{" "}
+        <span className="font-bold">1 year</span> of professional experience. I
+        derive great satisfaction from crafting{" "}
+        <span className="italic">websites and applications</span>. My particular
+        area of expertise lies in{" "}
+        <span className="italic font-bold">Frontend Development</span>,
+        specifically in <span className="underline">React (Next.js)</span>.
       </motion.h1>
 
       <motion.div
@@ -69,7 +71,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.1,
+          delay: 0.1
         }}
       >
         <Link

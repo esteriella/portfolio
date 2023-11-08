@@ -17,30 +17,34 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me</SectionHeading>
+      <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
-        After graduating with a HND  in{" "}
-        <span className="font-medium">Mass Communication</span>, I decided to pursue my
-        passion for programming and creative thinking. I enrolled in 2 coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development and frontend development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
+        After completing my HND in{" "}
+        <span className="font-medium">Mass Communication</span>, I embarked on a
+        journey to follow my passion for programming and creative
+        problem-solving. I enrolled in two coding bootcamps to master{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
+          full-stack web development and frontend development
         </span>
-        . I am also familiar with TypeScript. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time/internship position</span> as a software
-        developer.
+        . <span className="italic">My favorite aspect of programming</span> is
+        the challenge of problem-solving, and I'm passionate about finding
+        solutions. My core stack includes{" "}
+        <span className="font-medium">
+          Reactjs, Next.js, Node.js, and MongoDB
+        </span>
+        . I am also well-versed in TypeScript and continually seek to expand my
+        knowledge. Currently, I am actively seeking a{" "}
+        <span className="font-medium">full-time or internship position</span> as
+        a software developer.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy reading, watching educating videos, and writing. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        registered for an {" "}
-        <span className="font-medium">Agile software development programme</span>.
+        <span className="italic">When I'm not coding</span>, my interests
+        include reading, watching educational videos, and writing. I also have a
+        strong appetite for{" "}
+        <span className="font-medium">continuous learning</span>. Currently, I
+        am enrolled in an{" "}
+        <span className="font-medium">Agile software development program</span>.
       </p>
     </motion.section>
   );
