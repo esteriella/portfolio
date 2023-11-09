@@ -12,6 +12,7 @@ export default function Project({
   description,
   tags,
   src,
+  alt
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -50,7 +51,7 @@ export default function Project({
 
         <Image
           src={src}
-          alt="Project I worked on"
+          alt={alt}
           width={230}
           height={230}
           quality={100}

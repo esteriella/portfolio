@@ -53,28 +53,28 @@ export const projectsData = [
     title: "Wallet System",
     description:
       "I worked as a full-stack developer on this project for 2 months. Users can give public feedback.",
-    tags: ["React", "Nodejs", "Express", "MongoDB", "Framer-motion", "Css"],
+    tags: ["React Js", "Node Js", "Express", "MongoDB", "Framer-motion", "CSS"],
     src: '/walletsystem.png', alt: 'Wallet System',
   },
   {
     title: "Responsive Website",
     description:
       "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
-    tags: ["Html", "Css"],
+    tags: ["HTML", "CSS"],
     src: '/responsiveweb.png', alt: 'Responsive Website',
   },
   {
     title: "Cloned Hotelng",
     description:
       "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
-    tags: ["Html", "Css", "Javascript"],
+    tags: ["HTML", "CSS", "Javascript"],
     src: '/hotelng.png', alt: 'Hotelng',
   },
   {
     title: "Weather App",
     description:
       "I worked as a frontend developer on this project for 1 month. It has features like filtering, sorting and pagination.",
-    tags: ["React", "Css", "Javascript"],
+    tags: ["React Js", "CSS", "Javascript"],
     src: '/weatherapp.png', alt: 'Weather App',
     
   },
@@ -82,7 +82,7 @@ export const projectsData = [
     title: "Yelp Camp",
     description:
       "A public web app project within a 1 week time frame. I worked as a Frontend developer.",
-    tags: ["Html", "Tailwind", "Vanilla Javascript"],
+    tags: ["HTML", "Tailwind CSS", "Javascript"],
     src: '/yelpcamp.png', alt: 'Yelp Camp',
   },
 ] as const;
@@ -92,11 +92,11 @@ export const skillsData = [
   "CSS",
   "JavaScript",
   "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
+  "React Js",
+  "Next Js",
+  "Node Js",
+  "Git/GitHub",
+  "Tailwind CSS",
   "MongoDB",
   "Redux",
   "GraphQL",
