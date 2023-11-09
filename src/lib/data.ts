@@ -54,14 +54,14 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on this project for 2 months. Users can give public feedback.",
     tags: ["React", "Nodejs", "Express", "MongoDB", "Framer-motion", "Css"],
-    src: '/walletsystem', alt: 'Wallet System',
+    src: '/walletsystem.png', alt: 'Wallet System',
   },
   {
-    title: "Reponsive Website",
+    title: "Responsive Website",
     description:
       "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
     tags: ["Html", "Css"],
-    src: '/responsiveweb', alt: 'Responsive Website',
+    src: '/responsiveweb.png', alt: 'Responsive Website',
   },
   {
     title: "Cloned Hotelng",
@@ -75,7 +75,7 @@ export const projectsData = [
     description:
       "I worked as a frontend developer on this project for 1 month. It has features like filtering, sorting and pagination.",
     tags: ["React", "Css", "Javascript"],
-    src: '/yelpcamp.png', alt: 'Yelp Camp',
+    src: '/weatherapp.png', alt: 'Weather App',
     
   },
   {
