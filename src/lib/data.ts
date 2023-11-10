@@ -52,7 +52,7 @@ export const projectsData = [
   {
     title: "Wallet System",
     description:
-      "I worked as a full-stack developer on this project for 2 months. Users can give public feedback.",
+      "I served as a full-stack developer for a duration of two months on this project.",
     tags: ["React Js", "Node Js", "Express", "MongoDB", "Framer-motion", "CSS"],
     liveLink: "https://estie-wallet-system.vercel.app/",
     src: '/walletapp.png', alt: 'Wallet System',
@@ -60,7 +60,7 @@ export const projectsData = [
   {
     title: "Responsive Website",
     description:
-      "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
+      "I served as a frontend developer for a period of one month on this project, implemented necessary features.",
     tags: ["HTML", "CSS"],
     liveLink: "https://esteriella.github.io/Responsive-Website",
     src: '/responsiveweb.png', alt: 'Responsive Website',
@@ -68,7 +68,7 @@ export const projectsData = [
   {
     title: "Cloned Hotelng",
     description:
-      "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
+      "I assumed the role of a Frontend Developer for a duration of one month in the execution of this project, implemented necessary features. ",
     tags: ["HTML", "CSS", "Javascript"],
     liveLink: "https://esteriella.github.io/project_ng",
     src: '/hotelng.png', alt: 'Hotelng',
@@ -76,7 +76,7 @@ export const projectsData = [
   {
     title: "Weather App",
     description:
-      "I worked as a frontend developer on this project for 1 month. It has features like filtering, sorting and pagination.",
+      "I served as a Frontend Developer on this project for a duration of one month. The application boasts features characteristic of a weather app.",
     tags: ["React Js", "CSS", "Javascript"],
     liveLink: "https://weather-app-esteriella.vercel.app",
     src: '/weatherapp.png', alt: 'Weather App',
@@ -85,7 +85,7 @@ export const projectsData = [
   {
     title: "Yelp Camp",
     description:
-      "A public web app project within a 1 week time frame. I worked as a Frontend developer.",
+      "I contributed to the development of a public web application project within a concise one-week timeframe.",
     tags: ["HTML", "Tailwind CSS", "Javascript"],
     liveLink: "https://esteriella.github.io/yelp-camp",
     src: '/yelpcamp.png', alt: 'Yelp Camp',
