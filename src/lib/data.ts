@@ -54,6 +54,7 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on this project for 2 months. Users can give public feedback.",
     tags: ["React Js", "Node Js", "Express", "MongoDB", "Framer-motion", "CSS"],
+    liveLink: "https://estie-wallet-system.vercel.app/",
     src: '/walletapp.png', alt: 'Wallet System',
   },
   {
@@ -61,6 +62,7 @@ export const projectsData = [
     description:
       "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
     tags: ["HTML", "CSS"],
+    liveLink: "https://esteriella.github.io/Responsive-Website",
     src: '/responsiveweb.png', alt: 'Responsive Website',
   },
   {
@@ -68,6 +70,7 @@ export const projectsData = [
     description:
       "I worked as a frontend developer on this project for 1 month. Users can give public feedback.",
     tags: ["HTML", "CSS", "Javascript"],
+    liveLink: "https://esteriella.github.io/project_ng",
     src: '/hotelng.png', alt: 'Hotelng',
   },
   {
@@ -75,6 +78,7 @@ export const projectsData = [
     description:
       "I worked as a frontend developer on this project for 1 month. It has features like filtering, sorting and pagination.",
     tags: ["React Js", "CSS", "Javascript"],
+    liveLink: "https://weather-app-esteriella.vercel.app",
     src: '/weatherapp.png', alt: 'Weather App',
     
   },
@@ -83,6 +87,7 @@ export const projectsData = [
     description:
       "A public web app project within a 1 week time frame. I worked as a Frontend developer.",
     tags: ["HTML", "Tailwind CSS", "Javascript"],
+    liveLink: "https://esteriella.github.io/yelp-camp",
     src: '/yelpcamp.png', alt: 'Yelp Camp',
   },
 ] as const;

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -11,6 +12,7 @@ export default function Project({
   title,
   description,
   tags,
+  liveLink,
   src,
   alt
 }: ProjectProps) {
@@ -37,6 +39,7 @@ export default function Project({
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
+          <Link href={liveLink} target="_blank" title={title} className="bg-blue-500/[0.7] px-3 py-1 mt-2 mb-5 w-1/2 text-center rounded-full text-white dark:text-white/70">Live Demo</Link>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
             {tags.map((tag, index) => (
               <li
