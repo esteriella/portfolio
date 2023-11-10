@@ -75,7 +75,7 @@ export const projectsData = [
     description:
       "I worked as a frontend developer on this project for 1 month. It has features like filtering, sorting and pagination.",
     tags: ["React Js", "CSS", "Javascript"],
-    src: '/weatherapp.png', alt: 'Weather App',
+    src: '/weatherapp.jpeg', alt: 'Weather App',
     
   },
   {
@@ -83,7 +83,7 @@ export const projectsData = [
     description:
       "A public web app project within a 1 week time frame. I worked as a Frontend developer.",
     tags: ["HTML", "Tailwind CSS", "Javascript"],
-    src: '/yelpcamp.png', alt: 'Yelp Camp',
+    src: '/yelpcamp.jpeg', alt: 'Yelp Camp',
   },
 ] as const;
 
