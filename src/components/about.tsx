@@ -19,21 +19,21 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
-        After completing my HND in&nbsp;
+        After completing my HND in{" "}
         <span className="font-medium">Mass Communication</span>, I embarked on a
         journey to follow my passion for programming and creative
-        problem-solving. I enrolled in two coding bootcamps to master&nbsp;
+        problem-solving. I enrolled in two coding bootcamps to master{" "}
         <span className="font-medium">
           full-stack web development and frontend development
         </span>
         . <span className="italic">My favorite aspect of programming</span> is
         the challenge of problem-solving, and I'm passionate about finding
-        solutions. My core stack includes&nbsp;
+        solutions. My core stack includes{" "}
         <span className="font-medium">
           Reactjs, Next.js, Node.js, and MongoDB
         </span>
         . I am also well-versed in TypeScript and continually seek to expand my
-        knowledge. Currently, I am actively seeking a&nbsp;
+        knowledge. Currently, I am actively seeking a{" "}
         <span className="font-medium">full-time or internship position</span> as
         a software developer.
       </p>
@@ -41,9 +41,9 @@ export default function About() {
       <p>
         <span className="italic">When I'm not coding</span>, my interests
         include reading, watching educational videos, and writing. I also have a
-        strong appetite for&nbsp;
+        strong appetite for{" "}
         <span className="font-medium">continuous learning</span>. Currently, I
-        am enrolled in an&nbsp;
+        am enrolled in an{" "}
         <span className="font-medium">Agile software development program</span>.
       </p>
     </motion.section>
