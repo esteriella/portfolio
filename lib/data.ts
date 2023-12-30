@@ -34,7 +34,7 @@ export const experiencesData = [
     title: "Front-End Developer",
     location: "Remote",
     description:
-      "I worked as a front-end developer intern at HerTechTrail for 3 months.",
+      "During my tenure as a Front-End Developer Intern at HerTechTrail for a comprehensive three-month duration, I actively contributed to the development and enhancement of the user interface.",
     icon: React.createElement(CgWorkAlt),
     date: "August 2023 - Nov 2023",
   },
@@ -42,7 +42,7 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     location: "Remote",
     description:
-      "I'm now a full-stack developer intern at LuTA, working as a code contributor. My stack includes React, Next.js, TypeScript, Tailwind, Nodejs and MongoDB. I'm open to full-time opportunities.",
+      "I am currently serving as a Full-Stack Developer Intern at LuTA, actively contributing to the codebase. My skill set encompasses a comprehensive range of technologies, including React, Next.js, TypeScript, Tailwind, Node.js, and MongoDB. I am presently seeking full-time opportunities to further leverage my expertise and contribute meaningfully to innovative projects within the field.",
     icon: React.createElement(FaReact),
     date: "February 2023 - present",
   },
