@@ -64,11 +64,11 @@ export default function Intro() {
       >
         <span className="font-bold">Hi, I'm Opeyemi Esther Agbaje.
           </span> I'm a passionate <span className="font-bold">Fullstack Developer</span> with 
-          <span className="font-bold">over 3years of professional experience</span>. 
-          I take pride in building impactful <span className="italic">websites and applications</span>
-           that deliver seamless user experiences. My expertise lies in <span className="italic font-bold">Frontend Development</span>, 
-           particularly with <span className="underline">React.js and Next.js</span>, 
-           where I create intuitive, performance-driven interfaces that make a difference.
+          <span className="font-bold"> over 3 years of professional experience</span>. 
+          I take pride in building impactful <span className="italic">websites and applications</span> 
+          that deliver seamless user experiences. My expertise lies in <span className="italic font-bold">Frontend Development</span>,  
+          particularly with <span className="underline">React.js and Next.js</span>,  
+          where I create intuitive, performance-driven interfaces that make a difference.
       </motion.h1>
 
       <motion.div

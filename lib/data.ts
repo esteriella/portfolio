@@ -34,7 +34,7 @@ export const experiencesData = [
     title: "Backend Developer",
     location: "Remote",
     description:
-      "Worked as a Backend Developer at CVSPAN, where I was responsible for designing and implementing RESTful APIs, managing authentication systems, and collaborating with frontend developers to ensure seamless integration. I contributed to building scalable server-side logic using Node.js and TypeScript, managed data persistence with Prisma and PostgreSQL, and conducted unit and integration testing with Chai to maintain reliability and performance. My work directly supported the development of features used by end-users and internal teams.",
+      "Worked as a Backend Developer at CVSPAN, where I was responsible for designing and implementing RESTful APIs, managing authentication systems, and collaborating with frontend developers to ensure seamless integration.",
     icon: React.createElement(FaReact),
     date: "July 2024 - December 2024",
   },
@@ -42,7 +42,7 @@ export const experiencesData = [
     title: "Front-End Developer",
     location: "Remote",
     description:
-      "Served as a Front-End Developer Intern at HerTechTrail, where I actively contributed to building and refining responsive user interfaces over a three-month period. Collaborated with designers and product managers to translate Figma prototypes into functional components using modern frontend technologies, ensuring accessibility, performance, and design consistency across web platforms.",
+      "Served as a Front-End Developer Intern at HerTechTrail, where I actively contributed to building and refining responsive user interfaces and also collaborated with designers and product managers to translate Figma prototypes into functional components.",
     icon: React.createElement(CgWorkAlt),
     date: "August 2023 - November 2023",
   },
@@ -50,7 +50,7 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     location: "Remote",
     description:
-      "Worked as a Full-Stack Developer Intern at LuTA, where I contributed to the development of web applications from frontend to backend. I built dynamic user interfaces with React, Next.js, TypeScript, and Tailwind CSS, and developed backend functionalities using Node.js and MongoDB. I also collaborated in API design, handled state management, and participated in code reviews to ensure performance, scalability, and clean architecture across the stack.",
+      "Worked as a Full-Stack Developer Intern at LuTA, where I contributed to the development of web applications from frontend to backend. I built dynamic user interfaces with React, Next.js, TypeScript, and Tailwind CSS, and developed backend functionalities using Node.js and MongoDB.",
     icon: React.createElement(FaReact),
     date: "February 2023 - December 2023",
   }
