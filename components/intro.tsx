@@ -62,14 +62,13 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-         <span className="font-bold">Hello, I am Opeyemi Esther Agbaje.</span> I
-        am a <span className="font-bold">Fullstack Developer</span> with &nbsp;
-        <span className="font-bold">1 year</span> of professional experience. I
-        derive great satisfaction from crafting&nbsp;
-        <span className="italic">websites and applications</span>. My particular
-        area of expertise lies in&nbsp;
-        <span className="italic font-bold">Frontend Development</span>,
-        specifically in <span className="underline">React (Next.js)</span>.
+        <span className="font-bold">Hi, I'm Opeyemi Esther Agbaje.
+          </span> I'm a passionate <span className="font-bold">Fullstack Developer</span> with 
+          <span className="font-bold">over 3years of professional experience</span>. 
+          I take pride in building impactful <span className="italic">websites and applications</span>
+           that deliver seamless user experiences. My expertise lies in <span className="italic font-bold">Frontend Development</span>, 
+           particularly with <span className="underline">React.js and Next.js</span>, 
+           where I create intuitive, performance-driven interfaces that make a difference.
       </motion.h1>
 
       <motion.div
@@ -92,30 +91,30 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
-        <a
+        <Link
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           href="/Opeyemi_E_Agbaje.PDF"
           download
         >
           Download CV&nbsp;
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
+        </Link>
 
-        <a
+        <Link
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://www.linkedin.com/in/opeyemi-esther-agbaje-754b9822b"
           target="_blank"
         >
           <BsLinkedin />
-        </a>
+        </Link>
 
-        <a
+        <Link
           className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://github.com/esteriella"
           target="_blank"
         >
           <FaGithubSquare />
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

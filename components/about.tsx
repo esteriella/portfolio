@@ -19,32 +19,20 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
-        After completing my HND in&nbsp;
-        <span className="font-medium">Mass Communication</span>, I embarked on a
-        journey to follow my passion for programming and creative
-        problem-solving. I enrolled in two coding bootcamps to master&nbsp;
-        <span className="font-medium">
-          full-stack web development and frontend development
-        </span>
-        . <span className="italic">My favorite aspect of programming</span> is
-        the challenge of problem-solving, and I'm passionate about finding
-        solutions. My core stack includes&nbsp;
-        <span className="font-medium">
-          Reactjs, Next.js, Node.js, and MongoDB, Postgre,and Prisma
-        </span>
-        . I am also well-versed in TypeScript and continually seek to expand my
-        knowledge. Currently, I am actively seeking a&nbsp;
-        <span className="font-medium">full-time or internship position</span> as
-        a software developer.
+        After completing my Higher National Diploma (HND) in <span className="font-medium">Mass Communication</span>,
+         I pivoted to pursue my passion for programming and creative problem-solving. I immersed myself in two intensive coding bootcamps, where I honed my skills in <span className="font-medium">
+        full-stack web development and frontend development</span>. 
+        <span className="italic">What excites me most about programming</span> is the intellectual challenge of solving complex problems, and I thrive on finding innovative solutions. 
+        My core technical stack includes <span className="font-medium">React.js, Next.js, Node.js, MongoDB, PostgreSQL, and Prisma</span>, 
+        with a strong command of TypeScript. I’m always eager to learn and grow my skill set. I’m currently looking for a 
+        <span className="font-medium">full-time or internship position</span> as a software developer, 
+        where I can contribute to impactful projects and continue my growth in the field.
       </p>
+
 
       <p>
         <span className="italic">When I'm not coding</span>, my interests
-        include reading, watching educational videos, and writing. I also have a
-        strong appetite for&nbsp;
-        <span className="font-medium">continuous learning</span>. Currently, I
-        am enrolled in an&nbsp;
-        <span className="font-medium">Agile software development program</span>.
+        include reading, watching educational videos, and writing. 
       </p>
     </motion.section>
   );

@@ -60,7 +60,7 @@ export const projectsData = [
   {
     title: "Webbie",
     description:
-      "Currently in production, Webbie is an organization-facing platform where I served as a Backend Developer. I implemented secure, scalable RESTful APIs, integrated third-party authentication using Google and Facebook OAuth, and contributed to building robust backend infrastructure. Working with Node.js, TypeScript, Prisma ORM, and Chai for testing, I ensured performance, maintainability, and data integrity across the application. I also collaborated closely with frontend and DevOps teams to deliver a seamless and reliable product experience.",
+      "Currently in production, Webbie is an organization-facing platform where I served as a Backend Developer. I implemented secure, scalable RESTful APIs, integrated third-party authentication.", 
     tags: ["Node.js", "TypeScript", "Prisma", "Chai", "REST API", "OAuth", "Production App"],
     liveLink: "https://webbie.io",
     src: "/Webbie.png",
@@ -69,7 +69,7 @@ export const projectsData = [
   {
     title: "Wallet System",
     description:
-      "As a Fullstack Developer, I built this web-based wallet system over a two-month period. The application enables users to securely send and receive funds, view transaction history, and manage their account activities. I handled both frontend and backend development, focusing on seamless integration, user experience, and data security. The stack includes React.js for the UI, Node.js and Express for the backend, and MongoDB for data persistence.",
+      "As a Fullstack Developer, I built this web-based wallet system over a two-month period. The application enables users to securely send and receive funds, view transaction history, and manage their account activities.",
     tags: ["React.js", "Node.js", "Express", "MongoDB", "Framer Motion", "CSS"],
     liveLink: "https://estie-wallet-system.vercel.app/",
     src: "/EstieWallet.png",
@@ -78,7 +78,7 @@ export const projectsData = [
   {
     title: "Chat App",
     description:
-      "I developed this real-time chat application over the course of one month, focusing on the frontend interface and user experience. The app allows users to send and receive messages instantly in a clean, responsive UI. I implemented core features such as live message updates, chat windows, and user interactions using HTML, CSS, and JavaScript, ensuring cross-device compatibility and performance.",
+      "I developed this real-time chat application over the course of one month, focusing on the frontend interface and user experience.",
     tags: ["HTML", "CSS", "JavaScript", "React.Js", "Firebase"],
     liveLink: "https://chat-app-self-chi.vercel.app/",
     src: "/EstieChat.png",
