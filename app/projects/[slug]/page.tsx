@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectCaseStudy from "@/components/project-case-study";
+import DesktopModernizationCaseStudy from "@/components/desktop-modernization-case-study";
 import EstieMetalsBotCaseStudy from "@/components/estie-metals-bot-case-study";
 import StructuredData from "@/components/structured-data";
 import { projectsData } from "@/lib/data";
@@ -31,6 +32,17 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   const title = `${project.title} | Opeyemi Esther Agbaje`;
   const description = project.overview;
   const canonical = `/projects/${project.slug}`;
+  if (project.slug === "enterprise-desktop-modernization") {
+    return createPageMetadata({
+      title: "Enterprise Desktop Application Modernization | Opeyemi Agbaje",
+      description:
+        "Explore my desktop-engineering work modernizing a Windows application interface with C#, .NET, WPF, and XAML, focusing on usability, consistency, and maintainable UI design.",
+      path: canonical,
+      type: "article",
+      index: true,
+    });
+  }
+
   if (project.slug === "estie-metals-bot") {
     return createPageMetadata({
       title: "EstieMetalsBot — C#/.NET Trading Systems Engineering | Opeyemi Agbaje",
@@ -68,15 +80,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const relatedProjectSlugs =
+    project.slug === "enterprise-desktop-modernization"
+      ? ["webbie-backend", "estie-metals-bot", "mood-playlist", "earn-tracker"]
+      : [
+          "enterprise-desktop-modernization",
+          "webbie-backend",
+          "mood-playlist",
+          "earn-tracker",
+        ];
   const relatedProjects = projectsData.filter(
-    (item) =>
-      item.slug !== project.slug &&
-      [
-        "enterprise-desktop-modernization",
-        "webbie-backend",
-        "mood-playlist",
-        "earn-tracker",
-      ].includes(item.slug)
+    (item) => item.slug !== project.slug && relatedProjectSlugs.includes(item.slug)
   );
   const structuredData = {
     "@context": "https://schema.org",
@@ -100,7 +114,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="page-container pb-16" id="main-content" tabIndex={-1}>
       <StructuredData data={structuredData} />
-      {project.slug === "estie-metals-bot" ? (
+      {project.slug === "enterprise-desktop-modernization" ? (
+        <DesktopModernizationCaseStudy
+          project={project}
+          relatedProjects={relatedProjects}
+        />
+      ) : project.slug === "estie-metals-bot" ? (
         <EstieMetalsBotCaseStudy
           project={project}
           relatedProjects={relatedProjects}

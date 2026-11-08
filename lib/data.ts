@@ -57,6 +57,32 @@ export type EstieMetalsBotCaseStudy = {
   lessons: readonly string[];
 };
 
+export type DesktopApplicationCaseStudy = {
+  focus: readonly EngineeringFocus[];
+  overview: readonly string[];
+  objectives: {
+    introduction: string;
+    items: readonly string[];
+  };
+  contributions: {
+    introduction: string;
+    items: readonly string[];
+    conclusion: string;
+  };
+  architecture: {
+    narrative: readonly string[];
+    highlights: readonly EngineeringFocus[];
+  };
+  decisions: readonly string[];
+  challenges: readonly EngineeringChallenge[];
+  validation: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  outcomes: readonly string[];
+  lessons: readonly string[];
+};
+
 export type ProjectDetails = {
   slug: string;
   title: string;
@@ -90,6 +116,7 @@ export type ProjectDetails = {
   };
   livePreviewEligible?: boolean;
   editorialCaseStudy?: EstieMetalsBotCaseStudy;
+  desktopCaseStudy?: DesktopApplicationCaseStudy;
 };
 
 export const portfolioContent = {
@@ -195,66 +222,199 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Desktop Applications",
     role: "Contract Frontend Developer — Desktop Applications",
     description:
-      "Private client work modernizing Windows desktop interfaces with C#, .NET, WPF, and XAML. The work includes redesigning forms, creating reusable UI components, and improving usability. Product-specific details are omitted.",
+      "Enterprise Desktop Application Modernization is a professional desktop-engineering project I worked on as a contract frontend developer at Desires Investment Ltd. My work focused on modernizing Windows desktop application interfaces using C#, .NET, WPF, and XAML, with an emphasis on usability, consistency, and maintainable UI structure. Because this was a confidential employer engagement, proprietary product details are intentionally omitted, but the project reflects my practical experience redesigning forms and screens, improving interface workflows, and building reusable desktop UI patterns.",
     overview:
-      "A confidential desktop-application interface modernization engagement at Desires Investment Ltd. Product details and proprietary implementation are intentionally omitted.",
+      "I modernized an existing Windows desktop application interface at Desires Investment Ltd, focusing on usability, consistency, and maintainable UI structure while preserving existing functionality.",
     tags: ["C#", ".NET", "WPF", "XAML"],
-    status: "Private · Ongoing",
+    status: "Private / Confidential Engagement",
     caseStudy: {
       purpose: {
         title: "Project overview",
         status: "documented",
         content:
-          "Modernize Windows desktop application interfaces while preserving existing functionality and omitting confidential product details.",
+          "I worked on modernizing an existing desktop application interface while preserving the underlying functionality of the software. My focus was on clearer layouts, consistent visual structure, better navigation patterns, and reusable UI elements. I approached the work as an interface modernization effort intended to make the application more coherent, easier to use, and easier to maintain over time.",
       },
       objectives: {
         title: "Objectives",
         status: "documented",
         content:
-          "Redesign forms and screens, improve navigation and user workflows, and create reusable UI components, styles, and templates.",
+          "I aimed to improve usability and consistency without disrupting core business functionality: redesigning forms and screens, clarifying common workflows, improving layout and navigation, building reusable UI patterns, and modernizing the visual presentation within the existing application context.",
       },
       responsibilities: {
         title: "My responsibilities",
         status: "documented",
         content:
-          "The supplied role description attributes interface modernization, form and screen redesign, navigation and control refinement, and reusable UI component work to my contract role. Exact ownership boundaries require confirmation.",
+          "As the contract frontend developer working on this desktop application, I was responsible for improving the interface layer. My work included redesigning forms and screens in WPF, refining layouts and navigation, building and reusing UI components, styles, and templates, and improving consistency and maintainability across the interface.",
       },
       architecture: {
         title: "Architecture and technical approach",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm the application structure, UI patterns, component boundaries, data flow, and how the updated interfaces integrate with existing functionality. No architecture details are published yet.",
+          "My work focused on the application’s interface layer, using WPF and XAML to structure and refine the desktop user experience within an existing Windows application. The technical approach emphasized reusable UI structure, consistent design patterns, maintainable layouts, and practical refinement without disclosing private business logic.",
       },
       decisions: {
         title: "Implementation decisions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Add specific implementation decisions only after confirming the actual constraints, alternatives considered, and rationale.",
+          "I focused on incremental modernization rather than replacing the interface all at once. This let me improve forms, screens, and workflows while respecting the established application and avoiding unnecessary disruption. I also emphasized reusable UI structure and balanced visual refinement with practical usability.",
       },
       challenges: {
         title: "Challenges and solutions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm representative challenges and the solutions personally implemented before publication.",
+          "I worked within an existing application, improved consistency across multiple screens by reusing interface patterns and refining layouts, and considered maintainability alongside visual polish by working with reusable styles, templates, and structured interface patterns.",
       },
       validation: {
         title: "Testing and validation",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm the tests, user review, or validation process used for the interface changes.",
+          "My validation approach emphasized practical interface review, iterative refinement, workflow clarity, visual consistency, and how changes fit into the broader desktop application. I do not claim specific test coverage or formal testing systems.",
       },
       outcomes: {
         title: "Outcomes and impact",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "No impact metrics are published. Previously mentioned form counts, interaction-time reductions, and satisfaction figures remain unverified and require evidence and disclosure approval.",
+          "I contributed to improving the clarity, consistency, and maintainability of an existing Windows desktop application. The work strengthened my practical desktop-development experience and reinforced the importance of making interface improvements usable and sustainable within a working product. No unapproved metrics are claimed.",
       },
       lessons: {
         title: "Lessons learned",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Add lessons learned after confirming them with the project owner; do not infer them from the project description.",
+          "I learned the importance of consistency in both the visual interface and the way users move through an application. The work reinforced the value of reusable UI structure and strengthened my ability to improve usability and maintainability carefully within an established system.",
       },
+    },
+    desktopCaseStudy: {
+      focus: [
+        {
+          title: "Desktop UI",
+          description: "WPF/XAML interface modernization.",
+        },
+        {
+          title: "Usability",
+          description: "Clearer workflows and improved navigation.",
+        },
+        {
+          title: "Consistency",
+          description: "Shared UI patterns, styles, and templates.",
+        },
+        {
+          title: "Maintainability",
+          description: "Structured, reusable interface improvements.",
+        },
+      ],
+      overview: [
+        "In this role, I worked on modernizing an existing desktop application interface while preserving the underlying functionality of the software.",
+        "My focus was on improving the quality of the user experience through clearer layouts, more consistent visual structure, better navigation patterns, and reusable UI elements.",
+        "Rather than treating the work as isolated screen changes, I approached it as an interface modernization effort aimed at making the application more coherent, easier to use, and easier to maintain over time. Because the product is private, I am careful not to disclose proprietary implementation details, but the work gave me meaningful hands-on experience in WPF desktop interface engineering.",
+      ],
+      objectives: {
+        introduction:
+          "My objective in this engagement was to improve the usability and consistency of an existing Windows desktop application without disrupting the core business functionality already in place. The work centered on several practical goals:",
+        items: [
+          "Redesign forms and screens to improve clarity and visual consistency.",
+          "Make common workflows easier for users to understand and complete.",
+          "Improve layout structure and navigation across the application.",
+          "Build reusable UI components, styles, and templates where possible.",
+          "Support long-term maintainability through cleaner and more consistent interface patterns.",
+          "Modernize the visual presentation while respecting the existing application context.",
+        ],
+      },
+      contributions: {
+        introduction:
+          "As the contract frontend developer working on this desktop application, I was responsible for improving the interface layer of the product.",
+        items: [
+          "Redesigned existing forms and screens in WPF.",
+          "Refined application layouts and interface structure.",
+          "Improved navigation and user interaction patterns.",
+          "Built and reused UI components, styles, and templates.",
+          "Enhanced interface consistency across multiple parts of the application.",
+          "Worked within the constraints of an existing system while improving usability.",
+          "Contributed to a cleaner and more maintainable desktop UI experience.",
+        ],
+        conclusion:
+          "This work required balancing visual improvement with practical implementation constraints inside an established application environment.",
+      },
+      architecture: {
+        narrative: [
+          "My work focused on the application’s interface layer, using WPF and XAML to structure and refine the desktop user experience.",
+          "I worked within an existing Windows desktop application environment, improving the presentation and interaction layer without exposing the private internal business logic of the system.",
+          "From a technical standpoint, the work emphasized reusable UI structure, consistent design patterns, maintainable layouts, and practical interface refinement within an established .NET application. This required careful attention to how updated UI elements fit into the existing application rather than treating every screen as a standalone redesign.",
+        ],
+        highlights: [
+          {
+            title: "WPF & XAML",
+            description:
+              "Desktop interface design, layout structure, and reusable presentation patterns.",
+          },
+          {
+            title: "C# / .NET",
+            description:
+              "Application-layer integration within an existing desktop environment.",
+          },
+          {
+            title: "Reusable UI Components",
+            description:
+              "Shared styles, templates, and consistent interface elements.",
+          },
+          {
+            title: "Usability-Focused Refinement",
+            description:
+              "Navigation, clarity, visual consistency, and workflow improvement.",
+          },
+        ],
+      },
+      decisions: [
+        "One important implementation decision was to focus on modernization through incremental improvement rather than trying to rebuild the interface all at once.",
+        "Working within an existing application meant I needed to improve forms, screens, and workflows in a way that respected the surrounding system and reduced unnecessary disruption. I also emphasized reusable UI structure so that interface improvements could scale more consistently across the application.",
+        "Another key consideration was balancing visual refinement with practical usability. The goal was not just to make screens look better, but to make them clearer, more consistent, and easier for users to work with.",
+      ],
+      challenges: [
+        {
+          title: "Modernizing an Existing Interface Without Disrupting Functionality",
+          challenge:
+            "Because the application already existed and served real business needs, the work could not be approached like a blank-slate redesign. I had to improve the UI while respecting the established functionality and existing user workflows.",
+          response:
+            "I addressed this by making targeted, incremental improvements that enhanced clarity and usability without unnecessarily destabilizing the product.",
+        },
+        {
+          title: "Maintaining Consistency Across Multiple Screens",
+          challenge:
+            "In legacy or evolving desktop applications, inconsistency can build up over time across forms, controls, layouts, and interaction patterns. Part of my work involved bringing greater consistency to how the application looked and behaved.",
+          response:
+            "I approached this by reusing interface patterns, refining layouts, and introducing more structured UI conventions where possible.",
+        },
+        {
+          title: "Balancing Visual Improvement with Practical Maintainability",
+          challenge:
+            "Improving the interface was not just about visual polish. The updated UI also needed to remain practical for ongoing development and maintenance.",
+          response:
+            "By working with reusable styles, templates, and structured interface patterns, I aimed to support a cleaner and more maintainable desktop UI layer.",
+        },
+      ],
+      validation: {
+        narrative: [
+          "Because this work involved improving an existing desktop application interface, validation was closely tied to usability, consistency, and whether the updated screens supported the intended workflows effectively.",
+          "My approach emphasized practical interface review, iterative refinement, and attention to how changes fit into the broader desktop application. In a project like this, success is reflected in whether the interface becomes clearer, easier to navigate, and more consistent while preserving functionality.",
+        ],
+        highlights: [
+          "Interface refinement and review",
+          "Workflow clarity improvements",
+          "Visual consistency checks",
+          "Reusable UI pattern application",
+          "Incremental improvement within an existing system",
+          "Maintainability-focused UI updates",
+        ],
+      },
+      outcomes: [
+        "This project strengthened my practical desktop-development experience and gave me the opportunity to work on interface modernization in a real business environment.",
+        "Through the work, I contributed to improving the clarity, consistency, and maintainability of an existing Windows desktop application.",
+        "The experience also reinforced the importance of designing UI improvements that are not only visually cleaner but also more usable and sustainable inside a working product. It remains one of my most meaningful examples of applying C#, .NET, WPF, and XAML in a real-world engineering context.",
+      ],
+      lessons: [
+        "This project deepened my understanding of how to improve software interfaces within the constraints of an existing product.",
+        "I learned the importance of consistency, not just visually, but in how users move through the application and interact with different parts of the interface. The work also reinforced the value of reusable UI structure when maintaining or evolving a desktop application over time.",
+        "Most importantly, it strengthened my ability to work carefully inside an established system, improving usability and maintainability without losing sight of the broader product context.",
+      ],
     },
   },
   {

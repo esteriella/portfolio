@@ -361,6 +361,216 @@ html.dark {
     text-underline-offset: 0.2em;
   }
 
+  .desktop-hero {
+    max-width: 60rem;
+    padding-block: 0.5rem 1rem;
+  }
+
+  .desktop-hero-copy {
+    max-width: 54rem;
+  }
+
+  .desktop-section {
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .desktop-section-divided {
+    border-top: 1px solid var(--color-line);
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .desktop-section-heading {
+    max-width: 26rem;
+  }
+
+  .desktop-eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .desktop-focus-grid,
+  .desktop-highlight-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.875rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .desktop-focus-item,
+  .desktop-highlight-item {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    padding: 1rem 1.125rem;
+  }
+
+  .desktop-focus-item {
+    min-height: 8.5rem;
+  }
+
+  .desktop-focus-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.7rem;
+    color: var(--color-accent);
+    stroke-width: 1.8;
+  }
+
+  .desktop-editorial-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .desktop-prose {
+    max-width: 48rem;
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .desktop-prose > * + * {
+    margin-top: 1rem;
+  }
+
+  .desktop-check-list,
+  .desktop-contribution-list,
+  .desktop-tag-list,
+  .desktop-related ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .desktop-check-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .desktop-check-list li {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.65rem;
+  }
+
+  .desktop-check-list svg,
+  .desktop-tag-list svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.25rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .desktop-contribution-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .desktop-contribution-list li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--color-line);
+    padding-block: 0.85rem;
+  }
+
+  .desktop-list-index,
+  .desktop-challenge-number {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .desktop-challenge-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .desktop-challenge {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.25rem;
+  }
+
+  .desktop-challenge-number {
+    padding-top: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .desktop-challenge-copy {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .desktop-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .desktop-tag-list li {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    border: 1px solid var(--color-line);
+    border-radius: 9999px;
+    background: var(--color-surface);
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .desktop-tag-list svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-top: 0.1rem;
+  }
+
+  .desktop-outcomes {
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .desktop-related {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+    border-top: 1px solid var(--color-line);
+    padding-top: 2rem;
+  }
+
+  .desktop-related ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin: 0;
+  }
+
+  .desktop-related a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
   .project-preview-frame {
     display: flex;
     height: min(72vh, 48rem);
@@ -776,7 +986,9 @@ html.dark {
   }
 
   .estie-focus-grid,
-  .estie-architecture-grid {
+  .estie-architecture-grid,
+  .desktop-focus-grid,
+  .desktop-highlight-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -785,7 +997,17 @@ html.dark {
     column-gap: 2rem;
   }
 
+  .desktop-contribution-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
   .estie-challenge-copy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .desktop-challenge-copy {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
   }
@@ -814,6 +1036,19 @@ html.dark {
     column-gap: clamp(2rem, 6vw, 5rem);
   }
 
+  .desktop-focus-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .desktop-editorial-grid {
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+    column-gap: clamp(2rem, 6vw, 5rem);
+  }
+
+  .desktop-editorial-grid > .desktop-highlight-grid {
+    grid-column: 1 / -1;
+  }
+
   .estie-editorial-grid > .estie-architecture-grid {
     grid-column: 1 / -1;
   }
@@ -828,6 +1063,12 @@ html.dark {
   }
 
   .estie-related {
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+    align-items: start;
+    column-gap: clamp(2rem, 6vw, 5rem);
+  }
+
+  .desktop-related {
     grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
     align-items: start;
     column-gap: clamp(2rem, 6vw, 5rem);
