@@ -43,4 +43,6 @@ TypeScript Docs
 Prisma Documentation
 
 ✅ Deployment
-This portfolio is deployed on Vercel. To deploy your own version, connect your GitHub repo to Vercel and push your changes — deployment happens automatically.
+This project requires Node.js 26.x. The version is declared in `package.json` and `.nvmrc`.
+
+For Vercel, open **Project Settings → General → Node.js Version**, select **26.x**, and save the setting before redeploying. Vercel project settings are configured in the dashboard and are not changed by repository files alone.
