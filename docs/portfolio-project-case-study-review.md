@@ -1,7 +1,10 @@
-# Phase 5 project case-study review
+# Project case-study review
 
-The gallery and case-study routes use only the available portfolio content and owner-provided project descriptions. A section marked **Draft · confirmation needed** is intentionally not presented as a verified implementation claim.
-Case-study routes with any remaining draft sections are currently marked `noindex, follow` so unfinished copy is not presented as a complete search result. Their canonical metadata is already configured and they can be indexable once the confirmation items are resolved.
+The approved public inventory is Enterprise Desktop Application Modernization, Webbie, EstieMetalsBot, MoodPlaylist, and EarnTracker. Wallet System, Chat App, YelpCamp, Weather App, and EstieInvest are not included in the public project gallery. Existing source and Git history are retained.
+
+The MoodPlaylist and EarnTracker case studies use the supplied project information and visibly separate landing-page descriptions from independently verified behavior. Their public landing pages responded successfully during review. No authenticated actions, payment workflows, or source repositories were inspected. Both pages remain indexable because they publish their limitations explicitly and do not depend on iframe content.
+
+The projects in the approved inventory that still contain sections marked **Draft · confirmation needed** remain `noindex, follow` until their claims can be confirmed.
 
 ## Enterprise Desktop Application Modernization
 
@@ -51,28 +54,36 @@ Case-study routes with any remaining draft sections are currently marked `noinde
 - What high-level risk-control and reliability information is approved for disclosure.
 - Do not share source code, credentials, account information, private configuration, or proprietary trading strategy.
 
-## Wallet System
+## MoodPlaylist
 
-### Documented in the portfolio
+### Publicly documented
 
-- Existing project documentation describes a wallet web application with account management, fund transfers, and transaction history.
-- That documentation lists React.js, Node.js, Express, MongoDB, and CSS.
-- The public deployment URL and repository image are available; no repository link is published.
+- Personal full-stack project with a Next.js frontend and C# Web API backend, as supplied by the owner.
+- Deployment: <https://mood-playlist-five.vercel.app>.
+- The public landing page describes mood-based discovery, Spotify track suggestions, playlist creation, favourites, and refreshing a mix.
+- The deployment returned HTTP 200 and did not return `X-Frame-Options` or a Content-Security-Policy header that blocks framing during review.
 
-### Confirm before final publication
+### Not independently verified
 
-- Individual role and implementation responsibilities.
-- Features and technologies in the deployed version versus the documented project.
-- Architecture, testing, decisions, challenges, and any measurable outcomes.
-- Confirm screenshot usage is authorized and representative.
+- Authenticated workflows, Spotify integration behavior, API contract, persistence, implementation details, tests, and measurable outcomes.
+- The iframe successfully rendered the public landing page in a local production browser check; its interactive workflow has not been verified.
 
-## Deferred projects
+## EarnTracker
 
-MoodPlaylist and EarnTracker are not included in this phase's gallery because their specific features, individual contributions, architecture, tests, and public deployments have not been verified from the currently available workspace materials. The supplied stack description (Next.js frontend and C# Web API backend) is not sufficient evidence for detailed case-study claims or live previews.
+### Publicly documented
+
+- Personal full-stack project with a Next.js frontend and C# Web API backend, as supplied by the owner.
+- Deployment: <https://earn-tracker-chi.vercel.app>.
+- The public landing page describes income and fee visibility, multiple income sources, financial goals, safe demonstration payments, and PayPal/Paystack test-payment workflows.
+- The deployment returned HTTP 200 and did not return `X-Frame-Options` or a Content-Security-Policy header that blocks framing during review.
+
+### Not independently verified
+
+- Authenticated workflows, payment-provider test flows, API contract, persistence, implementation details, tests, and measurable outcomes.
+- The iframe successfully rendered the public landing page in a local production browser check; payment or account workflows were not exercised.
 
 ## Validation record
 
-- Category-filtered project gallery and statically generated detail routes were added for the four prioritized projects.
-- Metadata includes unique titles/descriptions, canonical paths, Open Graph data, and image alt text where a project image exists.
-- The Wallet System URL was loaded successfully in a browser check. No repository URLs were added.
-- Technical validation results should be recorded in the Phase 5 completion response; do not interpret a successful page build as proof of the project details above.
+- Category-filtered project gallery and static detail routes expose the five approved projects.
+- MoodPlaylist and EarnTracker have unique metadata, canonical paths, Open Graph/social-card data, breadcrumbs, sitemap inclusion, and opt-in previews.
+- No preview is loaded until a visitor requests it. Browser checks confirmed each public landing-page H1 rendered in its iframe and closing the preview removed the iframe. Application workflows were not tested.

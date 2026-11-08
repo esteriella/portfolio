@@ -18,18 +18,17 @@ The existing seven-phase structure is retained. This plan tracks implementation 
 
 ### Public project inventory
 
-The current gallery includes the four projects prioritized in the latest Phase 5 request:
+The current public gallery contains the five projects in the approved inventory:
 
 1. Enterprise Desktop Application Modernization
 2. Webbie
 3. EstieMetalsBot
-4. Wallet System
+4. MoodPlaylist
+5. EarnTracker
 
-MoodPlaylist and EarnTracker are deferred until authorized source or documentation verifies features, personal contributions, and deployment information. The earlier recommendation to include them is not enough evidence to publish case studies or enable previews.
+The homepage links to a dedicated `/projects` gallery, and each card links to a static `/projects/[slug]` case-study route. The gallery filters by Desktop Applications, Backend Systems, Full-Stack Web Development, and Personal Engineering Projects. MoodPlaylist and EarnTracker use the supplied live URLs and are displayed as full-stack Next.js/C# Web API projects. Their public landing-page descriptions are not presented as verified working application flows.
 
-The homepage links to a dedicated `/projects` gallery, and each card links to a static `/projects/[slug]` case-study route. The gallery filters by Desktop Applications, Backend Systems, Full-Stack Applications, and Personal Engineering Projects. The Wallet System live URL was checked and its authentic project image is used. No repository links are published because none were verified.
-
-Chat App, YelpCamp, Weather App, and the unbuilt EstieInvest remain excluded from public project cards and case studies. Wallet System is included per the updated Phase 4 and Phase 5 requests. Preserve excluded projects' historical source and Git history; do not create redirects unless a genuinely relevant replacement exists.
+Wallet System, Chat App, YelpCamp, Weather App, and the unbuilt EstieInvest are excluded from public project cards and case studies. Preserve excluded projects' historical source and Git history; do not create redirects unless a genuinely relevant replacement exists.
 
 Case studies separate documented statements from draft sections that need confirmation. Detailed architecture, decisions, testing, challenges, personal contribution, and measured outcomes are not inferred where supporting evidence is unavailable.
 
@@ -51,7 +50,7 @@ Outstanding project-specific confirmations are listed in [portfolio-project-case
 - Respect CSP and `X-Frame-Options`; do not bypass or alter another site's security configuration.
 - If a URL or authorized visual is unavailable, leave preview disabled and show a neutral fallback rather than a fabricated screenshot.
 - Verify URLs and embedding behavior before claiming either works.
-- Phase 5 implements external live-site navigation for the Wallet System only. No iframe preview was added: MoodPlaylist and EarnTracker do not yet have verified deployment URLs, and the current Phase 5 implementation request asked for verified live/repository links rather than an embedded preview. Reassess previews after project ownership and embedding permission are confirmed.
+- MoodPlaylist and EarnTracker have opt-in iframe previews in their case studies. The public deployment responses did not contain X-Frame-Options or a Content-Security-Policy header that blocks framing. Confirm actual rendering in the browser; do not bypass any future embedding restrictions.
 
 ## Phase 6 requirements
 

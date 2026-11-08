@@ -8,7 +8,7 @@ const categories: readonly (ProjectCategory | "All projects")[] = [
   "All projects",
   "Desktop Applications",
   "Backend Systems",
-  "Full-Stack Applications",
+  "Full-Stack Web Development",
   "Personal Engineering Projects",
 ];
 

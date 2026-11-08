@@ -2,6 +2,7 @@ import Link from "next/link";
 import TechnologyBadge from "@/components/ui/technology-badge";
 import type { ProjectDetails } from "@/lib/data";
 import Image from "next/image";
+import ProjectLivePreview from "@/components/project-live-preview";
 
 type ProjectCaseStudyProps = {
   project: ProjectDetails;
@@ -18,6 +19,11 @@ const sectionKeys = [
   "validation",
   "outcomes",
   "lessons",
+  "frontend",
+  "backend",
+  "integration",
+  "features",
+  "solutions",
 ] as const;
 
 export default function ProjectCaseStudy({
@@ -111,6 +117,9 @@ export default function ProjectCaseStudy({
       <div className="grid gap-5 md:grid-cols-2">
         {sectionKeys.map((key) => {
           const section = project.caseStudy[key];
+          if (!section) {
+            return null;
+          }
           const needsConfirmation = section.status === "confirmation-needed";
 
           return (
@@ -133,6 +142,10 @@ export default function ProjectCaseStudy({
           );
         })}
       </div>
+
+      {project.liveLink && project.livePreviewEligible && (
+        <ProjectLivePreview projectName={project.title} url={project.liveLink} />
+      )}
 
       <nav aria-label="Related projects" className="mt-12 border-t border-line pt-8">
         <h2 className="mb-4 font-heading text-heading-md font-semibold">

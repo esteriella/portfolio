@@ -18,7 +18,7 @@ export type ProjectCategory =
   | "Desktop Applications"
   | "Backend Systems"
   | "Personal Engineering Projects"
-  | "Full-Stack Applications";
+  | "Full-Stack Web Development";
 
 export type CaseStudySection = {
   title: string;
@@ -51,7 +51,13 @@ export type ProjectDetails = {
     validation: CaseStudySection;
     outcomes: CaseStudySection;
     lessons: CaseStudySection;
+    frontend?: CaseStudySection;
+    backend?: CaseStudySection;
+    integration?: CaseStudySection;
+    features?: CaseStudySection;
+    solutions?: CaseStudySection;
   };
+  livePreviewEligible?: boolean;
 };
 
 export const portfolioContent = {
@@ -161,7 +167,7 @@ export const projectsData: readonly ProjectDetails[] = [
     overview:
       "A confidential desktop-application interface modernization engagement at Desires Investment Ltd. Product details and proprietary implementation are intentionally omitted.",
     tags: ["C#", ".NET", "WPF", "XAML"],
-    status: "Private · Ongoing",
+    status: "Private · Under Development",
     caseStudy: {
       purpose: {
         title: "Project overview",
@@ -355,74 +361,174 @@ export const projectsData: readonly ProjectDetails[] = [
     },
   },
   {
-    slug: "wallet-system",
-    title: "Wallet System",
-    category: "Full-Stack Applications",
-    role: "Personal contribution requires confirmation",
+    slug: "mood-playlist",
+    title: "MoodPlaylist",
+    category: "Full-Stack Web Development",
+    role: "Full-Stack Developer · Personal project",
     description:
-      "A wallet web application. Existing portfolio documentation describes account management, fund transfers, and transaction history; implementation details and personal contribution require confirmation.",
+      "A mood-based music discovery application with a Next.js frontend and C# Web API backend. Its public description presents Spotify track suggestions, playlist creation, saved favourites, and refreshed selections; those workflows have not been independently tested.",
     overview:
-      "A publicly deployed wallet application represented by the existing portfolio screenshot and project documentation. Feature and technology claims should be checked against the application source before final publication.",
-    tags: ["React.js", "Node.js", "Express", "MongoDB", "CSS"],
-    liveLink: "https://estie-wallet-system.vercel.app/",
-    image: {
-      src: "/EstieWallet.png",
-      alt: "Landing page for the Estie Wallet web application",
-    },
+      "MoodPlaylist is a deployed mood-based music discovery application. The supplied project information identifies a Next.js frontend and C# Web API backend. Its public description presents mood-based discovery and Spotify-related playlist features; operation of those workflows has not been independently verified.",
+    tags: ["Next.js", "C#", "C# Web API"],
+    status: "Live deployment",
+    liveLink: "https://mood-playlist-five.vercel.app",
+    livePreviewEligible: true,
     caseStudy: {
       purpose: {
         title: "Project overview",
         status: "documented",
-        content:
-          "Existing portfolio documentation describes a web-based wallet application. The deployment is available, but its source implementation has not been verified in this repository.",
+        content: "MoodPlaylist is a mood-based music discovery application. Its public deployment responds successfully. Detailed source code and project documentation were not available in this portfolio repository.",
       },
       objectives: {
         title: "Objectives",
-        status: "confirmation-needed",
-        content:
-          "Confirm the intended users and application objectives from project documentation or source.",
+        status: "documented",
+        content: "The stated purpose is to help people discover music based on mood. Further product objectives have not been independently documented.",
       },
       responsibilities: {
         title: "My responsibilities",
-        status: "confirmation-needed",
-        content:
-          "Confirm my individual role and implementation responsibilities before publication.",
+        status: "documented",
+        content: "This is a personal project that I developed. The supplied project information identifies a Next.js frontend and C# Web API backend; feature-level ownership has not been independently reviewed against source.",
       },
       architecture: {
         title: "Architecture and technical approach",
-        status: "confirmation-needed",
-        content:
-          "The existing portfolio lists React.js, Node.js, Express, MongoDB, and CSS. Verify the actual frontend/backend architecture and deployed implementation before treating these as confirmed project technologies.",
+        status: "documented",
+        content: "The supplied stack is Next.js for the frontend and C# Web API for the backend. API endpoints, persistence, authentication, and deployment topology have not been verified and are not asserted here.",
       },
       decisions: {
         title: "Implementation decisions",
-        status: "confirmation-needed",
-        content:
-          "Confirm implementation choices and rationale from the project's source or documentation.",
+        status: "documented",
+        content: "Specific implementation decisions and their trade-offs have not been verified from source or project documentation.",
       },
       challenges: {
         title: "Challenges and solutions",
-        status: "confirmation-needed",
-        content:
-          "Confirm challenges and solutions personally implemented.",
+        status: "documented",
+        content: "No project-specific technical challenge has been independently verified for publication.",
       },
       validation: {
         title: "Testing and validation",
-        status: "confirmation-needed",
-        content:
-          "Confirm the testing approach and validation performed.",
+        status: "documented",
+        content: "The public deployment returned HTTP 200 during review. No application workflows, integrations, or automated tests were independently exercised.",
       },
       outcomes: {
         title: "Outcomes and impact",
-        status: "confirmation-needed",
-        content:
-          "No measured outcome has been provided. Do not infer business, security, or user impact from the live deployment.",
+        status: "documented",
+        content: "The public application is deployed. No user, business, or measured outcome is claimed, and the advertised workflows have not been independently verified.",
       },
       lessons: {
         title: "Lessons learned",
-        status: "confirmation-needed",
-        content:
-          "Confirm project-specific lessons before adding them.",
+        status: "documented",
+        content: "Project-specific lessons have not been supplied or verified.",
+      },
+      frontend: {
+        title: "Frontend implementation",
+        status: "documented",
+        content: "The project information identifies Next.js as the frontend framework. Component structure and implementation details have not been reviewed.",
+      },
+      backend: {
+        title: "C# Web API backend",
+        status: "documented",
+        content: "The project information identifies a C# Web API backend. Endpoints, data model, and backend behavior have not been reviewed.",
+      },
+      integration: {
+        title: "Frontend-to-backend integration",
+        status: "documented",
+        content: "A Next.js frontend and C# Web API are identified in the supplied project information. The API contract and integration behavior have not been independently tested.",
+      },
+      features: {
+        title: "Advertised application features",
+        status: "documented",
+        content: "The project description lists mood-based music discovery, Spotify track suggestions, playlist creation, saved favourite tracks, and refreshing selections. These are descriptions of advertised functionality, not a claim that each workflow was verified in this review.",
+      },
+      solutions: {
+        title: "Solutions",
+        status: "documented",
+        content: "Specific implemented solutions have not been independently verified from source or documentation.",
+      },
+    },
+  },
+  {
+    slug: "earn-tracker",
+    title: "EarnTracker",
+    category: "Full-Stack Web Development",
+    role: "Full-Stack Developer · Personal project",
+    description:
+      "An earnings-management and financial-tracking application for freelancers and independent earners, with a Next.js frontend and C# Web API backend. Payment and financial workflows shown on its public landing page have not been independently tested.",
+    overview:
+      "EarnTracker is a deployed earnings-management and financial-tracking application for freelancers and independent earners. The supplied project information identifies a Next.js frontend and C# Web API backend. Its public landing page describes income tracking, goals, and safe payment demonstrations; operational behavior has not been independently verified.",
+    tags: ["Next.js", "C#", "C# Web API"],
+    status: "Live deployment",
+    liveLink: "https://earn-tracker-chi.vercel.app",
+    livePreviewEligible: true,
+    caseStudy: {
+      purpose: {
+        title: "Project overview",
+        status: "documented",
+        content: "EarnTracker is an earnings-management and financial-tracking application for freelancers and independent earners. Its public deployment responds successfully. Detailed source code and project documentation were not available in this portfolio repository.",
+      },
+      objectives: {
+        title: "Objectives",
+        status: "documented",
+        content: "The stated purpose is to help independent earners understand and track earnings. Further product objectives have not been independently documented.",
+      },
+      responsibilities: {
+        title: "My responsibilities",
+        status: "documented",
+        content: "This is a personal project that I developed. The supplied project information identifies a Next.js frontend and C# Web API backend; feature-level ownership has not been independently reviewed against source.",
+      },
+      architecture: {
+        title: "Architecture and technical approach",
+        status: "documented",
+        content: "The supplied stack is Next.js for the frontend and C# Web API for the backend. API endpoints, persistence, authentication, payment architecture, and deployment topology have not been verified and are not asserted here.",
+      },
+      decisions: {
+        title: "Implementation decisions",
+        status: "documented",
+        content: "Specific implementation decisions and their trade-offs have not been verified from source or project documentation.",
+      },
+      challenges: {
+        title: "Challenges and solutions",
+        status: "documented",
+        content: "No project-specific technical challenge has been independently verified for publication.",
+      },
+      validation: {
+        title: "Testing and validation",
+        status: "documented",
+        content: "The public deployment returned HTTP 200 during review. No application workflows, payment integrations, or automated tests were independently exercised.",
+      },
+      outcomes: {
+        title: "Outcomes and impact",
+        status: "documented",
+        content: "The public application is deployed. No user, business, financial, or measured outcome is claimed, and the advertised workflows have not been independently verified.",
+      },
+      lessons: {
+        title: "Lessons learned",
+        status: "documented",
+        content: "Project-specific lessons have not been supplied or verified.",
+      },
+      frontend: {
+        title: "Frontend implementation",
+        status: "documented",
+        content: "The project information identifies Next.js as the frontend framework. Component structure and implementation details have not been reviewed.",
+      },
+      backend: {
+        title: "C# Web API backend",
+        status: "documented",
+        content: "The project information identifies a C# Web API backend. Endpoints, data model, and backend behavior have not been reviewed.",
+      },
+      integration: {
+        title: "Frontend-to-backend integration",
+        status: "documented",
+        content: "A Next.js frontend and C# Web API are identified in the supplied project information. The API contract and integration behavior have not been independently tested.",
+      },
+      features: {
+        title: "Advertised application features",
+        status: "documented",
+        content: "The EarnTracker landing page describes income and fee visibility, multiple income sources, financial goals, safe demonstration payments, and PayPal and Paystack test-payment workflows. These are descriptions of advertised functionality, not a claim that each integration was verified.",
+      },
+      solutions: {
+        title: "Solutions",
+        status: "documented",
+        content: "Specific implemented solutions have not been independently verified from source or documentation.",
       },
     },
   },
