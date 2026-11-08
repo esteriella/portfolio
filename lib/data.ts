@@ -83,6 +83,97 @@ export type DesktopApplicationCaseStudy = {
   lessons: readonly string[];
 };
 
+export type MoodPlaylistCaseStudy = {
+  focus: readonly EngineeringFocus[];
+  hero: string[];
+  overview: readonly string[];
+  objectives: {
+    introduction: string;
+    items: readonly string[];
+  };
+  contributions: {
+    introduction: string;
+    items: readonly string[];
+  };
+  architecture: {
+    narrative: readonly string[];
+    highlights: readonly EngineeringFocus[];
+  };
+  decisions: readonly string[];
+  challenges: readonly EngineeringChallenge[];
+  validation: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+    currentDeploymentNote: string;
+  };
+  outcomes: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  lessons: readonly string[];
+};
+
+export type EarnTrackerCaseStudy = {
+  focus: readonly EngineeringFocus[];
+  hero: readonly string[];
+  overview: readonly string[];
+  objectives: {
+    introduction: string;
+    items: readonly string[];
+  };
+  contributions: {
+    introduction: string;
+    items: readonly string[];
+  };
+  architecture: {
+    narrative: readonly string[];
+    highlights: readonly EngineeringFocus[];
+  };
+  decisions: readonly string[];
+  challenges: readonly EngineeringChallenge[];
+  validation: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+    evidenceNote: string;
+  };
+  outcomes: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+    demonstrationNote: string;
+  };
+  lessons: readonly string[];
+};
+
+export type WebbieCaseStudy = {
+  focus: readonly EngineeringFocus[];
+  hero: readonly string[];
+  overview: readonly string[];
+  objectives: {
+    introduction: string;
+    items: readonly string[];
+  };
+  contributions: {
+    introduction: string;
+    items: readonly string[];
+    conclusion: string;
+  };
+  architecture: {
+    narrative: readonly string[];
+    highlights: readonly EngineeringFocus[];
+  };
+  decisions: readonly string[];
+  challenges: readonly EngineeringChallenge[];
+  validation: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  outcomes: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  lessons: readonly string[];
+};
+
 export type ProjectDetails = {
   slug: string;
   title: string;
@@ -117,6 +208,9 @@ export type ProjectDetails = {
   livePreviewEligible?: boolean;
   editorialCaseStudy?: EstieMetalsBotCaseStudy;
   desktopCaseStudy?: DesktopApplicationCaseStudy;
+  moodPlaylistCaseStudy?: MoodPlaylistCaseStudy;
+  earnTrackerCaseStudy?: EarnTrackerCaseStudy;
+  webbieCaseStudy?: WebbieCaseStudy;
 };
 
 export const portfolioContent = {
@@ -423,64 +517,215 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Backend Systems",
     role: "Backend Developer at CVSpan",
     description:
-      "Backend development for an organization-facing platform, including REST API implementation and third-party authentication integration.",
+      "Webbie is a professional software project I contributed to during my time as a Backend Developer at CVSpan. My work focused on developing backend services using Node.js and TypeScript, working with REST APIs, integrating authentication functionality, and supporting database operations through Prisma. The experience strengthened my understanding of backend architecture, application security, API design, and testing within a professional development environment.",
     overview:
-      "Backend development work for Webbie during my Backend Developer role at CVSpan from July to December 2024. The public portfolio does not link to webbie.io because it is not verified as the same project.",
+      "During my time at CVSpan, I worked on backend development for Webbie, contributing to the services that supported the application's functionality.",
     tags: ["Node.js", "TypeScript", "Prisma", "Chai", "REST APIs", "OAuth"],
+    status: "Professional Work · July–December 2024",
+    webbieCaseStudy: {
+      focus: [
+        {
+          title: "Backend Development",
+          description: "Node.js and TypeScript application services.",
+        },
+        {
+          title: "API Engineering",
+          description: "REST endpoints, request handling, and integration.",
+        },
+        {
+          title: "Authentication",
+          description: "OAuth-related authentication integration.",
+        },
+        {
+          title: "Data Access and Testing",
+          description: "Prisma data operations and backend validation work.",
+        },
+      ],
+      hero: [
+        "Webbie is a professional software project I contributed to during my time as a Backend Developer at CVSpan.",
+        "My work focused on developing backend services using Node.js and TypeScript, working with REST APIs, integrating authentication functionality, and supporting database operations through Prisma.",
+        "The experience strengthened my understanding of backend architecture, application security, API design, and testing within a professional development environment.",
+      ],
+      overview: [
+        "During my time at CVSpan, I worked on backend development for Webbie, contributing to the services that supported the application's functionality.",
+        "My responsibilities involved working with Node.js and TypeScript to develop and maintain backend features, including API endpoints, authentication integrations, and database-related operations.",
+        "The project provided practical experience building application services that need to communicate clearly with other parts of a software system. It also strengthened my understanding of maintaining backend code within an existing product development environment.",
+      ],
+      objectives: {
+        introduction:
+          "My objective was to contribute reliable, maintainable backend functionality that supported the broader application's requirements. My technical focus included:",
+        items: [
+          "Developing and maintaining backend services.",
+          "Supporting REST API functionality.",
+          "Integrating authentication mechanisms.",
+          "Working with database access and persistence through Prisma.",
+          "Improving the clarity and maintainability of backend code.",
+          "Testing API behaviour and investigating integration issues.",
+          "Supporting dependable communication between application components.",
+        ],
+      },
+      contributions: {
+        introduction:
+          "As a Backend Developer at CVSpan, I contributed to Webbie's backend implementation within an existing product and development team.",
+        items: [
+          "Worked with Node.js and TypeScript.",
+          "Developed and maintained REST API endpoints.",
+          "Implemented or integrated OAuth-related authentication functionality.",
+          "Worked with Prisma for database operations.",
+          "Investigated backend issues and debugged API behaviour.",
+          "Tested relevant functionality with the available development tools.",
+          "Supported integration between backend services and other application components.",
+          "Maintained readable and organized backend code.",
+        ],
+        conclusion:
+          "This role helped me strengthen my ability to translate application requirements into backend functionality while working within an established development process.",
+      },
+      architecture: {
+        narrative: [
+          "My development work focused on Webbie's backend application layer. I worked with Node.js and TypeScript to develop application services and REST API functionality.",
+          "Prisma provided an abstraction for database operations I worked on, while authentication integrations required attention to how identity and authorization information moved through the system.",
+          "I approached my responsibilities by keeping API behaviour, data handling, and integration concerns organized so individual features could be developed, tested, and maintained more effectively. I do not make claims about specific database engines, service boundaries, or authentication providers.",
+        ],
+        highlights: [
+          {
+            title: "Node.js and TypeScript",
+            description:
+              "Backend application logic and strongly typed development.",
+          },
+          {
+            title: "REST APIs",
+            description:
+              "Endpoint implementation and communication with application consumers.",
+          },
+          {
+            title: "OAuth Integration",
+            description:
+              "Authentication-related functionality and external identity integration.",
+          },
+          {
+            title: "Prisma",
+            description: "Database access and application data operations.",
+          },
+        ],
+      },
+      decisions: [
+        "One important consideration in my backend work was maintaining a clear separation between request handling, application logic, and data access. This helped me think carefully about backend maintainability and how changes in one part of a system can affect other components.",
+        "I also worked with TypeScript to improve the clarity of application contracts and reduce avoidable type-related issues.",
+        "For authentication-related functionality, I considered how external identity integrations interacted with backend behaviour. These experiences strengthened my understanding of API design, maintainable backend structure, and reliable application integration.",
+      ],
+      challenges: [
+        {
+          title: "Integrating Authentication Functionality",
+          challenge:
+            "Authentication integration introduced the need to coordinate external identity mechanisms with application-level backend behaviour.",
+          response:
+            "I worked on OAuth-related functionality and investigated how authentication data interacted with relevant backend workflows. This helped me improve my understanding of identity integration and the importance of handling authentication responses carefully.",
+        },
+        {
+          title: "Maintaining Clear API Behaviour",
+          challenge:
+            "Backend APIs need predictable request and response behaviour so that other application components can use them reliably.",
+          response:
+            "I worked on developing and refining REST API functionality while paying attention to how requests were handled and how relevant data was returned. This reinforced the importance of consistent API contracts and clear backend implementation.",
+        },
+        {
+          title: "Debugging and Testing Backend Functionality",
+          challenge:
+            "Developing backend features involved identifying implementation issues and validating whether functionality behaved as expected.",
+          response:
+            "I used debugging and API testing to investigate problems, check responses, and improve the reliability of the code I contributed. This helped me build stronger habits around validating functionality rather than relying only on successful manual execution.",
+        },
+      ],
+      validation: {
+        narrative: [
+          "Testing was an important part of my backend development responsibilities. I worked on validating API behaviour, investigating backend errors, and checking authentication-related functionality.",
+          "The project technology list includes Chai as a testing tool. I do not have evidence to describe its exact role, test coverage, or specific test outcomes, so I avoid making those claims.",
+          "Working with the available development and testing tools helped me understand how to identify integration issues and verify that backend changes behaved as expected. The experience reinforced the value of clear API contracts, repeatable tests, and systematic debugging.",
+        ],
+        highlights: [
+          "REST API behaviour checks",
+          "Request and response verification",
+          "Authentication integration checks",
+          "Database-operation validation where applicable",
+          "Backend debugging",
+          "Repeatable testing with available tools",
+        ],
+      },
+      outcomes: {
+        narrative: [
+          "My work on Webbie provided valuable professional experience developing backend services using Node.js and TypeScript.",
+          "Through the project, I strengthened my experience with REST APIs, authentication integrations, data-access tooling, and backend testing. It also improved my ability to work within an existing codebase and contribute application functionality that other parts of a product depend on.",
+          "This experience has continued to inform how I approach backend architecture, integration boundaries, and maintainable code in later projects.",
+        ],
+        highlights: [
+          "Professional Node.js and TypeScript development",
+          "REST API implementation",
+          "OAuth authentication integration experience",
+          "Prisma data-access work",
+          "Backend testing and debugging",
+          "Contributing to an established software product",
+        ],
+      },
+      lessons: [
+        "Working on Webbie strengthened my understanding of professional backend development.",
+        "I learned the importance of clear API contracts, consistent data handling, and carefully managing authentication-related integration points. Working with TypeScript and Prisma also helped me understand how development tools can support maintainable backend functionality.",
+        "Testing and debugging reinforced the importance of checking application behaviour systematically. Most importantly, the experience helped me become more confident contributing to existing codebases and implementing backend features within a professional development environment.",
+      ],
+    },
     caseStudy: {
       purpose: {
         title: "Project overview",
         status: "documented",
         content:
-          "Backend development for an organization-facing platform, as described in the existing portfolio content. Further product details are not available.",
+          "I contributed to Webbie's backend services during my Backend Developer role at CVSpan from July to December 2024.",
       },
       objectives: {
         title: "Objectives",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm the product requirements and project objectives before adding specifics.",
+          "I focused on contributing maintainable backend services, REST API functionality, authentication integration, Prisma-based data operations, and dependable communication with other application components.",
       },
       responsibilities: {
         title: "My responsibilities",
         status: "documented",
         content:
-          "Existing project and experience documentation identifies REST API development, authentication integration, and collaboration with frontend developers. Confirm feature-level ownership before publishing more detail.",
+          "I worked with Node.js and TypeScript, developed REST API endpoints, contributed to OAuth-related authentication and Prisma data operations, investigated backend issues, tested relevant functionality, and supported integration with other application components.",
       },
       architecture: {
         title: "Architecture and technical approach",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "The documented technologies include Node.js, TypeScript, Prisma, REST APIs, and OAuth. Confirm service boundaries, data model, authentication flow, and integration design before describing architecture.",
+          "My work focused on the backend application layer using Node.js and TypeScript. I worked with REST API functionality, Prisma for database operations, and OAuth-related authentication integration. Specific database engines, providers, and internal architecture are not disclosed.",
       },
       decisions: {
         title: "Implementation decisions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm specific technical decisions and their trade-offs before publication.",
+          "I considered the separation of request handling, application logic, and data access, and used TypeScript to support clear application contracts. My work also required attention to how authentication integrations interacted with backend behaviour.",
       },
       challenges: {
         title: "Challenges and solutions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm a representative technical challenge and the solution I personally implemented.",
+          "My work involved coordinating authentication functionality with backend workflows, maintaining predictable REST API behaviour, and investigating backend issues through debugging and API testing.",
       },
       validation: {
         title: "Testing and validation",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Chai appears in the supplied project technology list. Confirm the specific test coverage, tooling, and validation performed.",
+          "I worked on validating API behaviour, investigating backend errors, and checking authentication-related functionality. Chai is listed among the project technologies, but its specific use, test coverage, and test outcomes are not independently documented.",
       },
       outcomes: {
         title: "Outcomes and impact",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "No measured or verified outcome has been supplied. Add results only when supported by evidence and approved for disclosure.",
+          "The project strengthened my professional experience with Node.js, TypeScript, REST APIs, authentication integration, Prisma, and backend testing while contributing to an established software product. No business or performance metrics are claimed.",
       },
       lessons: {
         title: "Lessons learned",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm project-specific lessons before adding them.",
+          "Working on Webbie strengthened my understanding of clear API contracts, consistent data handling, authentication integration, systematic testing, and contributing backend functionality within an existing codebase.",
       },
     },
   },
@@ -698,6 +943,157 @@ export const projectsData: readonly ProjectDetails[] = [
     status: "Live deployment",
     liveLink: "https://mood-playlist-five.vercel.app",
     livePreviewEligible: true,
+    moodPlaylistCaseStudy: {
+      focus: [
+        {
+          title: "Frontend Engineering",
+          description:
+            "Responsive Next.js interfaces and interactive application workflows.",
+        },
+        {
+          title: "Backend Development",
+          description: "C# Web API services and application logic.",
+        },
+        {
+          title: "Music Discovery",
+          description:
+            "Mood-based discovery and Spotify-related integration work.",
+        },
+        {
+          title: "Full-Stack Integration",
+          description:
+            "Communication between the frontend, backend, and external services.",
+        },
+      ],
+      hero: [
+        "MoodPlaylist is a full-stack music discovery application I developed using Next.js for the frontend and C# Web API for the backend.",
+        "The application is designed around a simple idea: making music discovery feel more personal by helping users explore tracks and playlists based on their current mood.",
+        "Through this project, I have worked on connecting a responsive frontend experience with backend application logic and external music-related services.",
+      ],
+      overview: [
+        "I developed MoodPlaylist to explore how a music application could provide a more personalized discovery experience through mood-based interaction.",
+        "Rather than making users begin with a specific song, artist, or genre, the application presents mood selection as the starting point for discovering music.",
+        "I built the frontend with Next.js and used a C# Web API to support the backend functionality. The project gave me an opportunity to work across the application stack, from interface development and user interactions to API integration and data-driven features.",
+      ],
+      objectives: {
+        introduction:
+          "My goal was to develop a full-stack music application that combines a simple user experience with maintainable frontend and backend responsibilities. The main objectives were to:",
+        items: [
+          "Design an intuitive interface for mood-based music discovery.",
+          "Support a smooth journey from mood selection to music suggestions.",
+          "Connect the Next.js frontend to a C# Web API.",
+          "Integrate the application's music-discovery functionality.",
+          "Make music selection and playlist interactions easy to understand.",
+          "Keep application components organized and maintainable.",
+          "Provide an experience that works comfortably across different screen sizes.",
+        ],
+      },
+      contributions: {
+        introduction:
+          "As the developer of MoodPlaylist, I worked across both the frontend and backend of the application.",
+        items: [
+          "Developed the frontend using Next.js.",
+          "Built backend functionality using C# Web API.",
+          "Connected frontend user interactions to backend services.",
+          "Designed and implemented user-facing music-discovery interfaces.",
+          "Worked on mood-selection and music-discovery workflows.",
+          "Worked on integrating external music-related services.",
+          "Worked on backend data handling and application integration.",
+          "Debugged frontend/backend communication and deployment behaviour.",
+          "Refined the user experience and application responsiveness.",
+        ],
+      },
+      architecture: {
+        narrative: [
+          "I structured MoodPlaylist around a Next.js frontend and a separate C# Web API backend.",
+          "The frontend presents the music-discovery experience and handles user interactions, while the backend supports server-side application functionality and integration requirements. This separation allowed me to work on the presentation layer and application services independently, with an API boundary between them.",
+          "I also worked on the supporting backend infrastructure needed to run the application beyond local development. I have not included database, authentication, or hosting-provider specifics here because I could not verify those details from the available project documentation.",
+        ],
+        highlights: [
+          {
+            title: "Next.js Frontend",
+            description:
+              "Interface rendering, navigation, mood selection, and user interactions.",
+          },
+          {
+            title: "C# Web API",
+            description: "Backend application logic and API services.",
+          },
+          {
+            title: "Music Integration",
+            description:
+              "Spotify-related discovery interactions described by the application.",
+          },
+          {
+            title: "Data and Infrastructure",
+            description:
+              "Backend hosting and data handling; provider and persistence details are not asserted.",
+          },
+        ],
+      },
+      decisions: [
+        "One important decision I made was to keep the frontend and backend as separate application layers. Using Next.js for the interface and C# Web API for backend functionality helped me organize responsibilities and keep the application easier to maintain.",
+        "I focused on making the main user journey straightforward: the user selects a mood, explores music, and interacts with the available playlist features.",
+        "I also considered how the frontend should respond to asynchronous backend and external-service operations. This brought attention to loading behaviour, error handling, and how the experience should behave when requested data is not immediately available.",
+      ],
+      challenges: [
+        {
+          title: "Connecting Two Technology Stacks",
+          challenge:
+            "Building MoodPlaylist required coordinating a Next.js frontend with a backend developed in C#.",
+          response:
+            "I approached this by keeping responsibilities clearly separated and using API communication to connect the user experience with backend functionality. This strengthened my practical understanding of full-stack integration across different technology stacks.",
+        },
+        {
+          title: "Building an Intuitive Discovery Experience",
+          challenge:
+            "A key design challenge was keeping music discovery simple while introducing mood-based personalization.",
+          response:
+            "I focused on making the interface straightforward, with clear interactions intended to guide users from selecting a mood to exploring relevant music. This helped me think more carefully about how frontend architecture and user experience influence each other.",
+        },
+        {
+          title: "Backend Deployment and Reliability",
+          challenge:
+            "Running the application's backend outside my local development environment introduced operational challenges, including backend availability and health-check issues.",
+          response:
+            "I investigated how deployment behaviour affected API accessibility. The experience reinforced the importance of deployment diagnostics, service health monitoring, and reliable communication between deployed frontend and backend systems. I do not claim that every historical availability issue has been resolved.",
+        },
+      ],
+      validation: {
+        narrative: [
+          "My testing approach has involved checking frontend behaviour, API communication, and application workflows. I have also worked on debugging backend responses and deployment-related issues to understand how the application behaves when services are unavailable or respond unexpectedly.",
+          "These activities have helped me develop a stronger understanding of end-to-end debugging, frontend/backend integration, and the importance of validating behaviour beyond the user interface alone.",
+        ],
+        highlights: [
+          "Frontend interaction checks",
+          "API integration and response debugging",
+          "Responsive interface review",
+          "Error and unavailable-service checks",
+          "Deployment diagnostics",
+        ],
+        currentDeploymentNote:
+          "The public landing page is available, but a CORS preflight failure prevented the mood-list API request from completing during review. API-dependent workflows therefore remain unverified in the deployed preview.",
+      },
+      outcomes: {
+        narrative: [
+          "MoodPlaylist demonstrates my experience developing a full-stack application with Next.js and C# Web API.",
+          "Through the project, I worked on a user-facing music-discovery experience while also gaining practical experience with backend services, integration boundaries, and deployment-related problem-solving. It has strengthened my ability to approach software development across multiple application layers rather than focusing on the frontend alone.",
+        ],
+        highlights: [
+          "Full-stack Next.js and C# development",
+          "Music-discovery user interface",
+          "Frontend-to-backend integration work",
+          "External-service integration work",
+          "Backend deployment troubleshooting",
+          "Responsive application development",
+        ],
+      },
+      lessons: [
+        "Developing MoodPlaylist helped me better understand the relationship between frontend experience and backend reliability.",
+        "I learned that an intuitive interface is only one part of a successful full-stack application. The underlying services also need to communicate reliably, handle unexpected responses, and provide the data the interface depends on.",
+        "Working with separate technology stacks strengthened my understanding of API-driven development. The project also reinforced the importance of clear component responsibilities, thoughtful user experience, and careful debugging when integrating multiple systems.",
+      ],
+    },
     caseStudy: {
       purpose: {
         title: "Project overview",
@@ -784,6 +1180,163 @@ export const projectsData: readonly ProjectDetails[] = [
     status: "Live deployment",
     liveLink: "https://earn-tracker-chi.vercel.app",
     livePreviewEligible: true,
+    earnTrackerCaseStudy: {
+      focus: [
+        {
+          title: "Full-Stack Architecture",
+          description: "Next.js frontend and C# Web API backend.",
+        },
+        {
+          title: "Financial Data",
+          description:
+            "Income, fees, and net-earnings presentation for independent work.",
+        },
+        {
+          title: "Payment Integration",
+          description:
+            "Development and testing workflows described by the public application.",
+        },
+        {
+          title: "Data Visualization",
+          description:
+            "Dashboard information and financial-goal progress presentation.",
+        },
+      ],
+      hero: [
+        "EarnTracker is a full-stack financial tracking application I developed using Next.js for the frontend and C# Web API for the backend.",
+        "The application is designed to help freelancers and independent earners bring their income, fees, payment information, and financial goals into one organized experience.",
+        "Through this project, I have worked on building data-driven interfaces, integrating frontend workflows with backend services, and handling financial information in a clear and structured way.",
+      ],
+      overview: [
+        "I developed EarnTracker around a practical problem: people earning money from multiple sources can find it difficult to maintain a clear picture of how much they actually earn.",
+        "The application is designed to bring income information, associated fees, and financial goals into a more organized interface.",
+        "I built the user-facing application with Next.js and used C# Web API for backend functionality. Working on EarnTracker gave me the opportunity to develop a full-stack application that combines financial data, interactive dashboards, API communication, and user-focused design.",
+      ],
+      objectives: {
+        introduction:
+          "My objective was to build a maintainable financial tracking application that makes earnings information easier to understand. I focused on several goals:",
+        items: [
+          "Create an intuitive interface for viewing income and earnings.",
+          "Organize financial information from multiple income sources.",
+          "Present the relationship between incoming payments, fees, and net earnings.",
+          "Provide an understandable view of financial goals and progress.",
+          "Integrate the Next.js frontend with a C# Web API.",
+          "Support safe development and testing of payment-related workflows.",
+          "Keep financial data presentation clear, structured, and responsive.",
+          "Design maintainable components that could support further improvements.",
+        ],
+      },
+      contributions: {
+        introduction:
+          "As the developer of EarnTracker, I worked on both its frontend and backend components.",
+        items: [
+          "Built the frontend using Next.js.",
+          "Developed backend functionality using C# Web API.",
+          "Connected application interfaces with backend endpoints.",
+          "Worked on income-related dashboard interfaces.",
+          "Worked with financial data representation and application workflows.",
+          "Worked on financial-goal features.",
+          "Worked on payment-related development workflows.",
+          "Handled frontend states and backend responses.",
+          "Debugged application behaviour and integration issues.",
+          "Improved interface organization and usability.",
+        ],
+      },
+      architecture: {
+        narrative: [
+          "I structured EarnTracker around a Next.js frontend and a C# Web API backend. The frontend provides the interactive experience for viewing income information, financial summaries, and application workflows.",
+          "The backend supports application services and processing of relevant financial information. I used API communication to connect the frontend with server-side functionality, organizing the application around these responsibilities.",
+          "I also worked on payment-related development workflows, where separating test operations from real financial activity was an important consideration. The available project material did not verify a database, ORM, authentication library, or payment-processing architecture, so I do not make claims about those implementation details.",
+        ],
+        highlights: [
+          {
+            title: "Next.js Frontend",
+            description:
+              "Application views, forms, dashboard components, and user interactions.",
+          },
+          {
+            title: "C# Web API",
+            description: "Backend services, request handling, and application logic.",
+          },
+          {
+            title: "Financial Data",
+            description:
+              "Income, fees, summaries, and goals as presented by the product.",
+          },
+          {
+            title: "Payment Testing",
+            description:
+              "Publicly described demo and provider test flows; integrations were not independently exercised.",
+          },
+        ],
+      },
+      decisions: [
+        "One of my key decisions was to separate the frontend experience from the backend services. This helped me organize the application's financial data handling independently from how information is displayed to users.",
+        "I focused on presenting financial information in a way that is understandable without requiring users to interpret unnecessarily complicated data.",
+        "Another important consideration involved payment-related development. I worked with development and demonstration workflows rather than treating test payments as real financial activity. This helped me think critically about application structure, user trust, and predictable financial-data behaviour.",
+      ],
+      challenges: [
+        {
+          title: "Organizing Financial Information",
+          challenge:
+            "Financial information can become difficult to interpret when income, fees, and payment sources are spread across different records.",
+          response:
+            "I approached this by organizing the application's data presentation around clearer summaries and relevant financial details. This helped me improve how information is structured and communicated within the interface.",
+        },
+        {
+          title: "Frontend and Backend Integration",
+          challenge:
+            "Connecting a Next.js application with a C# Web API required coordination between frontend data requirements and backend responses.",
+          response:
+            "I worked on maintaining clear communication between these layers and handling the information needed by the application's user-facing features. This strengthened my experience integrating different technology stacks into a single application.",
+        },
+        {
+          title: "Payment Workflows and Data Consistency",
+          challenge:
+            "Developing payment-related functionality introduced considerations around transaction information, response handling, and the difference between simulated and real financial activity.",
+          response:
+            "I worked on payment-related development and testing workflows with a distinction between demonstration activity and real-money operations. This reinforced the importance of reliable application states and careful validation when working with financial data.",
+        },
+      ],
+      validation: {
+        narrative: [
+          "My testing approach has focused on validating application workflows, checking frontend-to-backend communication, and reviewing the way financial information is displayed.",
+          "I have also worked on payment-related functionality using development and demonstration environments. The live page describes PayPal and Paystack test-payment options, but I did not independently test those integrations, authenticated workflows, or backend API behaviour during this review.",
+        ],
+        highlights: [
+          "Frontend workflow checks",
+          "Backend API integration work",
+          "Financial data presentation review",
+          "Input validation where implemented",
+          "Payment development workflows",
+          "Responsive interface review",
+          "Error handling and debugging",
+        ],
+        evidenceNote:
+          "The public landing page describes income and fee summaries, financial goals, and PayPal and Paystack test-payment workflows. These feature descriptions were not verified against application source or by completing authenticated flows.",
+      },
+      outcomes: {
+        narrative: [
+          "EarnTracker demonstrates my experience developing a full-stack application around financial-management requirements.",
+          "Through the project, I worked on connecting a modern Next.js frontend to a C# backend while building interfaces intended to organize income-related information and financial goals. It has also provided practical experience with payment-related development, financial-data representation, and coordinating features across frontend and backend services.",
+        ],
+        highlights: [
+          "Next.js and C# full-stack development",
+          "Earnings-oriented dashboard design",
+          "API-driven application workflows",
+          "Financial-data presentation",
+          "Financial-goal feature development",
+          "Payment integration development experience",
+        ],
+        demonstrationNote:
+          "Figures shown in the public landing page’s demonstration dashboard are illustrative product data. They are not verified user earnings, financial results, or project impact metrics.",
+      },
+      lessons: [
+        "Developing EarnTracker strengthened my understanding of the responsibility involved in building applications that handle financial information.",
+        "I learned the importance of presenting data clearly while ensuring that the underlying application logic is structured and maintainable. Working across Next.js and C# Web API reinforced my full-stack integration skills.",
+        "The payment-related work also helped me appreciate why financial applications need reliable response handling, careful testing, and clear separation between demonstration and real transactions. Overall, the project strengthened my ability to connect technical implementation decisions with usability and application reliability.",
+      ],
+    },
     caseStudy: {
       purpose: {
         title: "Project overview",

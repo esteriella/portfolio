@@ -8,7 +8,7 @@ import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import ThemeSwitch from "@/components/theme-switch";
 
-const resumeHref = "/Opeyemi_Esther_Agbaje_Resume.pdf";
+const resumeHref = "/Opeyemi_Agbaje_Updated_CV.pdf";
 
 export default function Header() {
   const pathname = usePathname();

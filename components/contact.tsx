@@ -156,7 +156,7 @@ export default function Contact() {
             <Link
               className="font-semibold text-accent underline"
               download
-              href="/Opeyemi_Esther_Agbaje_Resume.pdf"
+              href="/Opeyemi_Agbaje_Updated_CV.pdf"
             >
               Download resume
             </Link>

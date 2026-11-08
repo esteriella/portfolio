@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectCaseStudy from "@/components/project-case-study";
+import WebbieCaseStudy from "@/components/webbie-case-study";
+import EarnTrackerCaseStudy from "@/components/earn-tracker-case-study";
+import MoodPlaylistCaseStudy from "@/components/mood-playlist-case-study";
 import DesktopModernizationCaseStudy from "@/components/desktop-modernization-case-study";
 import EstieMetalsBotCaseStudy from "@/components/estie-metals-bot-case-study";
 import StructuredData from "@/components/structured-data";
@@ -32,6 +35,39 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   const title = `${project.title} | Opeyemi Esther Agbaje`;
   const description = project.overview;
   const canonical = `/projects/${project.slug}`;
+  if (project.slug === "webbie-backend") {
+    return createPageMetadata({
+      title: "Webbie — Backend Engineering with Node.js & TypeScript | Opeyemi Agbaje",
+      description:
+        "Explore my backend-development contributions to Webbie at CVSpan, involving Node.js, TypeScript, REST APIs, OAuth integration, Prisma, and API testing.",
+      path: canonical,
+      type: "article",
+      index: true,
+    });
+  }
+
+  if (project.slug === "earn-tracker") {
+    return createPageMetadata({
+      title: "EarnTracker — Next.js & C# Full-Stack Development | Opeyemi Agbaje",
+      description:
+        "Explore my work on EarnTracker, a full-stack earnings-management application using Next.js and C# Web API, featuring financial tracking, dashboard development, and payment-related integrations.",
+      path: canonical,
+      type: "article",
+      index: true,
+    });
+  }
+
+  if (project.slug === "mood-playlist") {
+    return createPageMetadata({
+      title: "MoodPlaylist — Next.js & C# Full-Stack Development | Opeyemi Agbaje",
+      description:
+        "Explore my development of MoodPlaylist, a mood-based music discovery application built with Next.js and C# Web API, highlighting user experience, API integration, and full-stack engineering.",
+      path: canonical,
+      type: "article",
+      index: true,
+    });
+  }
+
   if (project.slug === "enterprise-desktop-modernization") {
     return createPageMetadata({
       title: "Enterprise Desktop Application Modernization | Opeyemi Agbaje",
@@ -83,12 +119,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const relatedProjectSlugs =
     project.slug === "enterprise-desktop-modernization"
       ? ["webbie-backend", "estie-metals-bot", "mood-playlist", "earn-tracker"]
-      : [
-          "enterprise-desktop-modernization",
-          "webbie-backend",
-          "mood-playlist",
-          "earn-tracker",
-        ];
+      : project.slug === "earn-tracker"
+        ? ["webbie-backend", "mood-playlist", "enterprise-desktop-modernization"]
+        : project.slug === "webbie-backend"
+          ? [
+              "enterprise-desktop-modernization",
+              "estie-metals-bot",
+              "mood-playlist",
+              "earn-tracker",
+            ]
+          : [
+              "enterprise-desktop-modernization",
+              "webbie-backend",
+              "mood-playlist",
+              "earn-tracker",
+            ];
   const relatedProjects = projectsData.filter(
     (item) => item.slug !== project.slug && relatedProjectSlugs.includes(item.slug)
   );
@@ -114,7 +159,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="page-container pb-16" id="main-content" tabIndex={-1}>
       <StructuredData data={structuredData} />
-      {project.slug === "enterprise-desktop-modernization" ? (
+      {project.slug === "webbie-backend" ? (
+        <WebbieCaseStudy
+          project={project}
+          relatedProjects={relatedProjects}
+        />
+      ) : project.slug === "earn-tracker" ? (
+        <EarnTrackerCaseStudy
+          project={project}
+          relatedProjects={relatedProjects}
+        />
+      ) : project.slug === "mood-playlist" ? (
+        <MoodPlaylistCaseStudy
+          project={project}
+          relatedProjects={relatedProjects}
+        />
+      ) : project.slug === "enterprise-desktop-modernization" ? (
         <DesktopModernizationCaseStudy
           project={project}
           relatedProjects={relatedProjects}

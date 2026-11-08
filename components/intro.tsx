@@ -49,7 +49,7 @@ export default function Intro() {
 
           <ButtonLink
             variant="secondary"
-            href="/Opeyemi_Esther_Agbaje_Resume.pdf"
+            href="/Opeyemi_Agbaje_Updated_CV.pdf"
             download
           >
             Download resume
