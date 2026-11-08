@@ -3,18 +3,20 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="page-container flex flex-col items-center gap-y-16 pb-16 sm:gap-y-24 sm:pb-24"
+    >
       <Intro />
-      <SectionDivider />
-      <About />
       <Projects />
       <Skills />
       <Experience />
+      <About />
       <Contact />
     </main>
   );

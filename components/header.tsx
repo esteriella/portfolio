@@ -1,63 +1,123 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import ThemeSwitch from "@/components/theme-switch";
+
+const resumeHref = "/Opeyemi_E_Agbaje.PDF";
 
 export default function Header() {
+  const pathname = usePathname();
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+
+  const handleNavigation = (name: (typeof links)[number]["name"]) => {
+    setActiveSection(name);
+    setTimeOfLastClick(Date.now());
+    setMobileMenuOpen(false);
+  };
+
+  const renderLinks = (mobile = false) =>
+    links.map((link) => {
+      const isActive =
+        link.href === pathname ||
+        (link.href === "/#skills" &&
+          pathname === "/" &&
+          activeSection === "Skills");
+
+      return (
+        <li key={link.name}>
+          <Link
+            aria-current={isActive ? "page" : undefined}
+            className={clsx(
+              "nav-link",
+              isActive && "nav-link-active",
+              mobile && "nav-link-mobile"
+            )}
+            href={link.href}
+            onClick={() => handleNavigation(link.name)}
+          >
+            {link.name}
+          </Link>
+        </li>
+      );
+    });
 
   return (
-    <header className="z-[999] relative">
-      <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
-        initial={{ y: -100, x: "-50%", opacity: 0 }}
-        animate={{ y: 0, x: "-50%", opacity: 1 }}
-      ></motion.div>
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && mobileMenuOpen) {
+          setMobileMenuOpen(false);
+          menuToggleRef.current?.focus();
+        }
+      }}
+    >
+      <div className="page-container header-inner">
+        <Link
+          className="brand-link"
+          href="/"
+          onClick={() => handleNavigation("Home")}
+        >
+          Opeyemi Agbaje
+        </Link>
 
-      <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links.map((link) => (
-            <motion.li
-              className="h-3/4 flex items-center justify-center relative"
-              key={link.hash}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+        <nav className="desktop-navigation" aria-label="Main navigation">
+          <ul>{renderLinks()}</ul>
+        </nav>
+
+        <div className="header-actions">
+          <Link
+            className="button-secondary header-resume"
+            href={resumeHref}
+            download
+          >
+            Resume
+          </Link>
+          <ThemeSwitch />
+          <button
+            ref={menuToggleRef}
+            aria-controls="mobile-navigation"
+            aria-expanded={mobileMenuOpen}
+            aria-label={
+              mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            className="menu-toggle"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            type="button"
+          >
+            <span aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
+          </button>
+        </div>
+      </div>
+
+      <nav
+        aria-label="Mobile navigation"
+        className={clsx(
+          "mobile-navigation",
+          mobileMenuOpen && "mobile-navigation-open"
+        )}
+        id="mobile-navigation"
+        aria-hidden={!mobileMenuOpen}
+      >
+        <ul className="page-container">
+          {renderLinks(true)}
+          <li>
+            <Link
+              className="nav-link nav-link-mobile"
+              href={resumeHref}
+              download
+              onClick={() => setMobileMenuOpen(false)}
             >
-              <Link
-                className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
-                  {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection === link.name,
-                  }
-                )}
-                href={link.hash}
-                onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
-                }}
-              >
-                {link.name}
-
-                {link.name === activeSection && (
-                  <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
-                    layoutId="activeSection"
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}
-                  ></motion.span>
-                )}
-              </Link>
-            </motion.li>
-          ))}
+              Download resume
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

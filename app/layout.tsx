@@ -1,18 +1,70 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import StructuredData from "@/components/structured-data";
+import { createPageMetadata, siteName, siteUrl } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Opeyemi | Personal Portfolio",
-  description: "Opeyemi is a full-stack developer with 1 year of experience.",
+  metadataBase: new URL(siteUrl),
+  ...createPageMetadata({
+    title: "Opeyemi Esther Agbaje | Full-Stack Software Engineer",
+    description:
+      "Full-Stack Software Engineer working across C#/.NET desktop applications, backend systems, and responsive web development with React, Next.js, and TypeScript.",
+    path: "/",
+    type: "profile",
+  }),
 };
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteName,
+    jobTitle: "Full-Stack Software Engineer",
+    url: `${siteUrl}/about`,
+    email: "agbajeopeyemiesther@gmail.com",
+    sameAs: [
+      "https://github.com/esteriella",
+      "https://www.linkedin.com/in/opeyemi-esther-agbaje-754b9822b",
+    ],
+    knowsAbout: [
+      "C#",
+      ".NET",
+      "WPF",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Backend development",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: siteUrl,
+    publisher: {
+      "@type": "Person",
+      name: siteName,
+      url: `${siteUrl}/about`,
+    },
+  },
+];
 
 export default function RootLayout({
   children,
@@ -20,21 +72,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-
+    <html lang="en">
+      <body className={`${inter.variable} ${manrope.variable} pt-24`}>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
+            <StructuredData data={structuredData} />
+            <a className="skip-link" href="#main-content">
+              Skip to content
+            </a>
             <Header />
             {children}
             <Footer />
-
             <Toaster position="top-right" />
-            <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

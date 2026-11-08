@@ -2,38 +2,30 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { portfolioContent } from "@/lib/data";
+import Link from "next/link";
 
 export default function About() {
   const { ref } = useSectionInView("About");
 
   return (
-    <motion.section
+    <section
       ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
+      className="w-full scroll-mt-28"
       id="about"
     >
-      <SectionHeading>About Me</SectionHeading>
-      <p className="mb-3">
-        After completing my Higher National Diploma (HND) in <span className="font-medium">Mass Communication</span>,
-         I pivoted to pursue my passion for programming and creative problem-solving. I immersed myself in two intensive coding bootcamps, where I honed my skills in <span className="font-medium">
-        full-stack web development and frontend development</span>. 
-        <span className="italic">What excites me most about programming</span> is the intellectual challenge of solving complex problems, and I thrive on finding innovative solutions. 
-        My core technical stack includes <span className="font-medium">React.js, Next.js, Node.js, MongoDB, PostgreSQL, and Prisma</span>, 
-        with a strong command of TypeScript. I’m always eager to learn and grow my skill set. I’m currently looking for a 
-        <span className="font-medium">full-time or internship position</span> as a software developer, 
-        where I can contribute to impactful projects and continue my growth in the field.
-      </p>
-
-
-      <p>
-        <span className="italic">When I'm not coding</span>, my interests
-        include reading, watching educational videos, and writing. 
-      </p>
-    </motion.section>
+      <SectionHeading align="left">About</SectionHeading>
+      <div className="reading-container ml-0 space-y-4 leading-relaxed text-muted">
+        <p className="text-lg font-medium text-ink">{portfolioContent.summary}</p>
+        <p>{portfolioContent.about[1]}</p>
+        <Link
+          href="#skills"
+          className="inline-flex min-h-11 items-center font-semibold text-accent underline"
+        >
+          Explore my technical expertise
+        </Link>
+      </div>
+    </section>
   );
 }

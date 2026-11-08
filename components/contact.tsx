@@ -1,74 +1,168 @@
 "use client";
 
-import React from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const formRef = useRef<HTMLFormElement>(null);
+  const [feedback, setFeedback] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   return (
-    <motion.section
+    <section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      className="w-full max-w-[48rem] scroll-mt-28"
     >
-      <SectionHeading>Contact me</SectionHeading>
-
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at&nbsp;
+      <SectionHeading align="left">Get in touch</SectionHeading>
+      <p className="text-muted">
+        I welcome conversations about software engineering opportunities,
+        collaboration, and projects. Email me at{" "}
         <a className="underline" href="mailto:agbajeopeyemiesther@gmail.com">
           agbajeopeyemiesther@gmail.com
-        </a>&nbsp;
-        or through this form.
+        </a>{" "}
+        or use the form below.
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black"
+        ref={formRef}
+        className="mt-8 flex flex-col gap-4"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          setFeedback(null);
+          try {
+            const result = await sendEmail(formData);
+            if (result.error) {
+              setFeedback({ type: "error", message: result.error });
+              return;
+            }
 
-          if (error) {
-            toast.error(error);
-            return;
+            formRef.current?.reset();
+            setFeedback({
+              type: "success",
+              message: "Thanks for your message. It has been sent.",
+            });
+          } catch {
+            setFeedback({
+              type: "error",
+              message:
+                "Your message could not be sent. Please try again or email me directly.",
+            });
           }
-
-          toast.success("Email sent successfully!");
         }}
       >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
+        <label className="flex flex-col gap-2 font-medium" htmlFor="contact-name">
+          Name
+          <input
+            autoComplete="name"
+            className="form-control"
+            id="contact-name"
+            maxLength={100}
+            name="senderName"
+            placeholder="Your name"
+            required
+          />
+        </label>
+        <label
+          className="flex flex-col gap-2 font-medium"
+          htmlFor="contact-email"
+        >
+          Email
+          <input
+            autoComplete="email"
+            className="form-control"
+            id="contact-email"
+            maxLength={254}
+            name="senderEmail"
+            placeholder="you@example.com"
+            required
+            type="email"
+          />
+        </label>
+        <label
+          className="flex flex-col gap-2 font-medium"
+          htmlFor="contact-message"
+        >
+          Message
+          <textarea
+            className="form-control min-h-52 resize-y"
+            id="contact-message"
+            maxLength={5000}
+            name="message"
+            placeholder="How can I help?"
+            required
+          />
+        </label>
+        <div aria-hidden="true" className="honeypot">
+          <label htmlFor="contact-website">Leave this field empty</label>
+          <input
+            autoComplete="off"
+            id="contact-website"
+            name="website"
+            tabIndex={-1}
+          />
+        </div>
         <SubmitBtn />
+        {feedback && (
+          <p
+            aria-live={feedback.type === "error" ? "assertive" : "polite"}
+            className={feedback.type === "error" ? "text-error" : "text-accent"}
+            role={feedback.type === "error" ? "alert" : "status"}
+          >
+            {feedback.message}
+          </p>
+        )}
       </form>
-    </motion.section>
+
+      <nav aria-label="Contact and professional links" className="mt-8">
+        <ul className="flex flex-wrap gap-x-5 gap-y-3">
+          <li>
+            <a
+              className="font-semibold text-accent underline"
+              href="mailto:agbajeopeyemiesther@gmail.com"
+            >
+              Email
+            </a>
+          </li>
+          <li>
+            <a
+              aria-label="GitHub profile (opens in a new tab)"
+              className="font-semibold text-accent underline"
+              href="https://github.com/esteriella"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              aria-label="LinkedIn profile (opens in a new tab)"
+              className="font-semibold text-accent underline"
+              href="https://www.linkedin.com/in/opeyemi-esther-agbaje-754b9822b"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <Link
+              className="font-semibold text-accent underline"
+              download
+              href="/Opeyemi_E_Agbaje.PDF"
+            >
+              Download resume
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </section>
   );
 }

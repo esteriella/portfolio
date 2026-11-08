@@ -1,121 +1,86 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { portfolioContent } from "@/lib/data";
+import ContactCTA from "@/components/contact-cta";
+import ButtonLink from "@/components/ui/button-link";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="w-full max-w-[68rem] scroll-mt-24 py-12 sm:py-16 lg:py-24"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
-            <Image
-              src="/opeyemi.png"
-              alt="Opeyemi Image"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-            />
-          </motion.div>
+      <div className="max-w-[54rem]">
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent sm:text-base">
+          Opeyemi Esther Agbaje
+        </p>
+        <h1 className="mt-5 max-w-[15ch] font-heading text-display-sm font-bold">
+          {portfolioContent.tagline}
+        </h1>
+        <p className="mt-5 text-lg font-semibold sm:text-xl">
+          {portfolioContent.title}
+        </p>
+        <p className="mt-4 max-w-[44rem] text-base leading-relaxed text-muted sm:text-lg">
+          {portfolioContent.introduction}
+        </p>
 
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
+        <ul
+          aria-label="Engineering specializations"
+          className="mt-6 flex flex-wrap gap-2"
+        >
+          <li className="technology-badge">C#/.NET desktop applications</li>
+          <li className="technology-badge">Backend systems</li>
+          <li className="technology-badge">Responsive web development</li>
+        </ul>
+
+        <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <ButtonLink href="#projects">
+            View my work
+            <BsArrowRight aria-hidden="true" />
+          </ButtonLink>
+
+          <ButtonLink
+            variant="secondary"
+            href="/Opeyemi_E_Agbaje.PDF"
+            download
           >
-            👋
-          </motion.span>
+            Download resume
+            <HiDownload aria-hidden="true" />
+          </ButtonLink>
+
+          <ContactCTA variant="secondary" />
+
+          <div className="flex items-center gap-2 sm:ml-2">
+            <Link
+              className="icon-link"
+              href="https://www.linkedin.com/in/opeyemi-esther-agbaje-754b9822b"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Opeyemi Esther Agbaje on LinkedIn (opens in a new tab)"
+            >
+              <BsLinkedin aria-hidden="true" />
+            </Link>
+
+            <Link
+              className="icon-link"
+              href="https://github.com/esteriella"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Opeyemi Esther Agbaje on GitHub (opens in a new tab)"
+            >
+              <FaGithubSquare aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </div>
-
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-2xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hi, I'm Opeyemi Esther Agbaje.
-          </span> I'm a passionate <span className="font-bold">Fullstack Developer</span> with 
-          <span className="font-bold"> over 3 years of professional experience</span>. 
-          I take pride in building impactful <span className="italic">websites and applications</span> 
-          that deliver seamless user experiences. My expertise lies in <span className="italic font-bold">Frontend Development</span>,  
-          particularly with <span className="underline">React.js and Next.js</span>,  
-          where I create intuitive, performance-driven interfaces that make a difference.
-      </motion.h1>
-
-      <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here&nbsp;
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
-
-        <Link
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/Opeyemi_E_Agbaje.PDF"
-          download
-        >
-          Download CV&nbsp;
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </Link>
-
-        <Link
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://www.linkedin.com/in/opeyemi-esther-agbaje-754b9822b"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </Link>
-
-        <Link
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/esteriella"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </Link>
-      </motion.div>
     </section>
   );
 }

@@ -1,58 +1,76 @@
 "use client";
 
-import React from "react";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
+import TechnologyBadge from "@/components/ui/technology-badge";
+
+const experienceIds: Record<string, string> = {
+  "Desires Investment Ltd": "experience-desires-investment",
+  CVSpan: "experience-cvspan",
+};
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
-                fontSize: "1.5rem",
-              }}
-            >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
+    <section
+      id="experience"
+      ref={ref}
+      className="w-full scroll-mt-28"
+    >
+      <SectionHeading
+        align="left"
+        description="Recent desktop and backend work, alongside earlier frontend and full-stack roles."
+      >
+        Experience
+      </SectionHeading>
+      <ol
+        aria-label="Professional experience"
+        className="mt-10 grid gap-5 lg:grid-cols-2"
+      >
+        {experiencesData.map((item) => (
+          <li
+            className="experience-card"
+            id={experienceIds[item.employer]}
+            key={item.employer}
+          >
+            <article className="surface-card p-5 sm:p-6">
+              <p className="text-sm font-semibold text-accent">{item.date}</p>
+              <h3 className="mt-2 font-heading text-heading-md font-semibold">
+                {item.role}
+              </h3>
+              <p className="mt-1 font-medium">{item.employer}</p>
+              {item.employmentType && (
+                <p className="mt-1 text-sm text-muted">
+                  {item.employmentType}
+                </p>
+              )}
+              {item.location && (
+                <p className="mt-1 text-sm text-muted">
+                  {item.location}
+                </p>
+              )}
+              <p className="mt-3 text-muted">{item.summary}</p>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted">
+                {item.responsibilities.map((responsibility) => (
+                  <li key={responsibility}>{responsibility}</li>
+                ))}
+              </ul>
+              <ul
+                aria-label={`${item.employer} technologies`}
+                className="mt-4 flex flex-wrap gap-2"
+              >
+                {item.technologies.map((technology) => (
+                  <li key={technology}>
+                    <TechnologyBadge>{technology}</TechnologyBadge>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </li>
         ))}
-      </VerticalTimeline>
+      </ol>
     </section>
   );
 }
