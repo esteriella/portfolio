@@ -2,6 +2,7 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import TechnologyBadge from "@/components/ui/technology-badge";
+import ProjectLivePreview from "@/components/project-live-preview";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -13,6 +14,7 @@ export default function Project({
   role,
   slug,
   liveLink,
+  livePreviewEligible,
   image,
   status,
 }: ProjectProps) {
@@ -71,7 +73,14 @@ export default function Project({
           >
             View case study
           </Link>
-          {liveLink && (
+          {liveLink && livePreviewEligible && (
+            <ProjectLivePreview
+              projectName={title}
+              url={liveLink}
+              variant="card"
+            />
+          )}
+          {liveLink && !livePreviewEligible && (
             <Link
               href={liveLink}
               target="_blank"

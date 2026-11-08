@@ -102,6 +102,375 @@ html.dark {
     box-shadow: var(--shadow-subtle);
   }
 
+  .estie-case-study {
+    --estie-reading-width: 48rem;
+  }
+
+  .estie-hero {
+    max-width: 60rem;
+    padding-block: 0.5rem 1rem;
+  }
+
+  .estie-hero-copy {
+    max-width: 54rem;
+  }
+
+  .estie-section {
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .estie-section-divided {
+    border-top: 1px solid var(--color-line);
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .estie-section-heading {
+    max-width: 24rem;
+  }
+
+  .estie-eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .estie-focus-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.875rem;
+    margin-top: 1.25rem;
+  }
+
+  .estie-focus-item {
+    min-height: 8.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    padding: 1rem 1.125rem;
+  }
+
+  .estie-focus-icon,
+  .estie-architecture-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.7rem;
+    color: var(--color-accent);
+    stroke-width: 1.8;
+  }
+
+  .estie-editorial-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .estie-prose {
+    max-width: var(--estie-reading-width);
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .estie-prose > * + * {
+    margin-top: 1rem;
+  }
+
+  .estie-prose h3 + * {
+    margin-top: 1rem;
+  }
+
+  .estie-check-list,
+  .estie-contribution-list,
+  .estie-tag-list,
+  .estie-outcome-list,
+  .estie-related ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .estie-check-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .estie-check-list li {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.65rem;
+  }
+
+  .estie-check-list svg,
+  .estie-tag-list svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.25rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .estie-contribution-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .estie-contribution-list li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--color-line);
+    padding-block: 0.85rem;
+  }
+
+  .estie-list-index,
+  .estie-challenge-number {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .estie-architecture-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.875rem;
+    margin-top: 1.5rem;
+  }
+
+  .estie-architecture-item {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    padding: 1rem;
+  }
+
+  .estie-architecture-icon {
+    margin: 0.1rem 0 0;
+  }
+
+  .estie-challenge-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .estie-challenge {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.25rem;
+  }
+
+  .estie-challenge-number {
+    padding-top: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .estie-challenge-copy {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .estie-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .estie-tag-list li {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    border: 1px solid var(--color-line);
+    border-radius: 9999px;
+    background: var(--color-surface);
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .estie-tag-list svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-top: 0.1rem;
+  }
+
+  .estie-outcomes {
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .estie-outcome-list {
+    display: grid;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.25rem;
+  }
+
+  .estie-outcome-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .estie-outcome-list li::before {
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: var(--color-accent);
+    content: "";
+  }
+
+  .estie-related {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+    border-top: 1px solid var(--color-line);
+    padding-top: 2rem;
+  }
+
+  .estie-related ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin: 0;
+  }
+
+  .estie-related a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .project-preview-frame {
+    display: flex;
+    height: min(72vh, 48rem);
+    min-height: 24rem;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .project-preview-toolbar {
+    display: flex;
+    min-height: 2.75rem;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-line);
+    padding-inline: 1rem;
+  }
+
+  .project-preview-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: var(--color-line);
+  }
+
+  .project-preview-url {
+    overflow: hidden;
+    margin-left: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .project-preview-viewport {
+    position: relative;
+    min-height: 0;
+    flex: 1;
+    background: var(--color-canvas);
+  }
+
+  .project-preview-iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #fff;
+  }
+
+  .project-preview-iframe.is-loading {
+    visibility: hidden;
+  }
+
+  .project-preview-status,
+  .project-preview-unavailable {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    background: var(--color-canvas);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .project-preview-dialog {
+    width: min(90vw, 90rem);
+    height: min(85dvh, 60rem);
+    max-width: none;
+    max-height: none;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    padding: 1rem;
+    color: var(--color-ink);
+    box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 0.3);
+  }
+
+  .project-preview-dialog[open] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-preview-dialog::backdrop {
+    background: rgb(12 20 29 / 0.72);
+  }
+
+  .project-preview-dialog-header {
+    display: flex;
+    min-height: 2.75rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .project-preview-dialog .project-preview-frame {
+    height: auto;
+    min-height: 0;
+    flex: 1;
+  }
+
   .technology-badge {
     display: inline-flex;
     align-items: center;
@@ -405,6 +774,21 @@ html.dark {
   :root {
     --space-content: 2rem;
   }
+
+  .estie-focus-grid,
+  .estie-architecture-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .estie-contribution-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
+  .estie-challenge-copy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -420,6 +804,34 @@ html.dark {
   .mobile-navigation {
     display: none;
   }
+
+  .estie-focus-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .estie-editorial-grid {
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+    column-gap: clamp(2rem, 6vw, 5rem);
+  }
+
+  .estie-editorial-grid > .estie-architecture-grid {
+    grid-column: 1 / -1;
+  }
+
+  .estie-outcomes .estie-editorial-grid {
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+  }
+
+  .estie-outcome-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
+  .estie-related {
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+    align-items: start;
+    column-gap: clamp(2rem, 6vw, 5rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -430,5 +842,19 @@ html.dark {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-preview-dialog {
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    padding: 0.75rem;
+  }
+
+  .project-preview-dialog .project-preview-frame {
+    border-radius: var(--radius-control);
   }
 }

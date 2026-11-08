@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectCaseStudy from "@/components/project-case-study";
+import EstieMetalsBotCaseStudy from "@/components/estie-metals-bot-case-study";
 import StructuredData from "@/components/structured-data";
 import { projectsData } from "@/lib/data";
 import { createPageMetadata, siteUrl } from "@/lib/seo";
@@ -30,6 +31,17 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   const title = `${project.title} | Opeyemi Esther Agbaje`;
   const description = project.overview;
   const canonical = `/projects/${project.slug}`;
+  if (project.slug === "estie-metals-bot") {
+    return createPageMetadata({
+      title: "EstieMetalsBot — C#/.NET Trading Systems Engineering | Opeyemi Agbaje",
+      description:
+        "Explore my engineering work on EstieMetalsBot, a private C#/.NET trading-system project involving market-data processing, PostgreSQL, MT5 integration, visualization, and reliability-focused development.",
+      path: canonical,
+      type: "article",
+      index: true,
+    });
+  }
+
   const hasDraftContent = Object.values(project.caseStudy).some(
     (section) => section.status === "confirmation-needed"
   );
@@ -57,7 +69,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const relatedProjects = projectsData.filter(
-    (item) => item.slug !== project.slug
+    (item) =>
+      item.slug !== project.slug &&
+      [
+        "enterprise-desktop-modernization",
+        "webbie-backend",
+        "mood-playlist",
+        "earn-tracker",
+      ].includes(item.slug)
   );
   const structuredData = {
     "@context": "https://schema.org",
@@ -81,10 +100,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="page-container pb-16" id="main-content" tabIndex={-1}>
       <StructuredData data={structuredData} />
-      <ProjectCaseStudy
-        project={project}
-        relatedProjects={relatedProjects}
-      />
+      {project.slug === "estie-metals-bot" ? (
+        <EstieMetalsBotCaseStudy
+          project={project}
+          relatedProjects={relatedProjects}
+        />
+      ) : (
+        <ProjectCaseStudy project={project} relatedProjects={relatedProjects} />
+      )}
     </main>
   );
 }

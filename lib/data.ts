@@ -26,6 +26,37 @@ export type CaseStudySection = {
   content: string;
 };
 
+export type EngineeringFocus = {
+  title: string;
+  description: string;
+};
+
+export type EngineeringChallenge = {
+  title: string;
+  challenge: string;
+  response: string;
+};
+
+export type EstieMetalsBotCaseStudy = {
+  focus: readonly EngineeringFocus[];
+  overview: readonly string[];
+  objectives: readonly string[];
+  contributions: readonly string[];
+  architecture: readonly string[];
+  architectureHighlights: readonly EngineeringFocus[];
+  decisions: readonly string[];
+  challenges: readonly EngineeringChallenge[];
+  validation: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  outcomes: {
+    narrative: readonly string[];
+    highlights: readonly string[];
+  };
+  lessons: readonly string[];
+};
+
 export type ProjectDetails = {
   slug: string;
   title: string;
@@ -58,6 +89,7 @@ export type ProjectDetails = {
     solutions?: CaseStudySection;
   };
   livePreviewEligible?: boolean;
+  editorialCaseStudy?: EstieMetalsBotCaseStudy;
 };
 
 export const portfolioContent = {
@@ -167,7 +199,7 @@ export const projectsData: readonly ProjectDetails[] = [
     overview:
       "A confidential desktop-application interface modernization engagement at Desires Investment Ltd. Product details and proprietary implementation are intentionally omitted.",
     tags: ["C#", ".NET", "WPF", "XAML"],
-    status: "Private · Under Development",
+    status: "Private · Ongoing",
     caseStudy: {
       purpose: {
         title: "Project overview",
@@ -298,66 +330,199 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Personal Engineering Projects",
     role: "Private project",
     description:
-      "A private C#/.NET trading-systems engineering project currently in development. Implementation details are withheld pending confirmation of what is safe to disclose.",
+      "A private trading-system application I am developing with C# and .NET. It combines financial market-data processing, structured analysis, interactive charting, historical replay, and risk-aware decision workflows within a modular software architecture.",
     overview:
-      "A private personal project in active development. It is presented only as a software-engineering project; no trading strategy, performance, or operational capability is claimed.",
-    tags: ["C#", ".NET"],
-    status: "Private · Ongoing",
+      "EstieMetalsBot is a private trading-system application I am developing with C# and .NET. It combines financial market-data processing, structured analysis, interactive charting, historical replay, and risk-aware decision workflows within a modular software architecture. Through this project, I am exploring complex system design, data integrity, external integrations, and the reliability challenges involved in engineering automated financial software.",
+    tags: ["C#", ".NET", "PostgreSQL", "MetaTrader 5", "MQL5"],
+    status: "Private · In Development",
     caseStudy: {
       purpose: {
         title: "Project overview",
         status: "documented",
         content:
-          "Private, ongoing C#/.NET trading-systems engineering project. Further project purpose and implementation details require owner approval.",
+          "I started EstieMetalsBot to engineer a structured and maintainable application capable of processing financial market information and supporting rule-based trading decisions. Rather than placing all the application logic inside a trading terminal, I designed the system around a dedicated C#/.NET engine with separate responsibilities for market-data handling, analysis, persistence, visualization, risk controls, and external integrations. I have also focused on building tools that make complex application behaviour easier to observe, inspect, and validate. The application remains under active development, with particular attention to correctness, reliability, and controlled progression toward automated execution.",
       },
       objectives: {
         title: "Objectives",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm the project objectives and the development scope that may be shared publicly.",
+          "My main objective is to develop a reliable, extensible trading-system application that can process market data, evaluate structured trading conditions, and support consistent decision-making. I am working to establish dependable data acquisition and validation, separate analysis from external trading infrastructure, create reusable market-analysis components, build visual inspection tools, incorporate risk-awareness and safeguards, support repeatable testing and historical replay, and keep the system maintainable as it develops.",
       },
       responsibilities: {
         title: "My responsibilities",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm which components and engineering tasks are implemented personally before describing them.",
+          "As the developer responsible for EstieMetalsBot, I have translated complex functional and technical requirements into a structured software system. My work spans C#/.NET architecture, market-data processing, MetaTrader 5 communication, data validation and PostgreSQL persistence, chart visualization and historical replay, analytical tooling, rule-based workflows, safety-oriented requirements, and investigation of technical failures. I organize development into manageable, verifiable milestones, prioritizing separation of concerns, maintainability, traceability, and reliable behaviour.",
       },
       architecture: {
         title: "Architecture and technical approach",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm the implemented architecture and approved level of detail. Do not expose private source code, credentials, accounts, strategies, or sensitive configuration.",
+          "I designed EstieMetalsBot around a dedicated C#/.NET engine responsible for application orchestration and analytical logic. The application integrates with MetaTrader 5 through a thin MQL5 bridge, allowing market information to reach the .NET engine without placing every decision-making responsibility inside the trading terminal. I worked with broker-native candles across multiple timeframes, validation workflows, and PostgreSQL-backed historical persistence. Charting and replay use persisted market information for visualization, historical inspection, and controlled analytical testing. Separating these responsibilities makes the application easier to understand, test, maintain, and extend.",
       },
       decisions: {
         title: "Implementation decisions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm technical decisions that can be described without disclosing proprietary trading logic or configuration.",
+          "One of my most important architectural decisions was to separate the analytical engine from the trading terminal. This lets me develop, inspect, and validate application behaviour independently of external execution. I also chose to maintain validated historical market information instead of relying entirely on transient data. For charting and historical inspection, I worked with broker-native timestamps and persisted candle data to improve consistency between source information and visual representation. I keep historical replay and analytical validation separate from live trading operations; these boundaries reduce coupling and support safer development, debugging, and future extensibility.",
       },
       challenges: {
         title: "Challenges and solutions",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm a safe, representative engineering challenge and the implemented solution. Reliability and risk controls may be discussed only at an approved high level.",
+          "I addressed the complexity of combining data processing, analysis, persistence, charting, and external integration by separating major responsibilities into components with clearer boundaries. To improve market-data consistency, I worked on validation and persistence for broker-native candles, including timestamps and timeframe consistency, and made that data available to visualization and historical inspection. Long-running validation also exposed timing-related problems and execution inconsistencies. I investigated these through controlled testing, evidence inspection, and incremental debugging, maintaining clear boundaries between completed, incomplete, and blocked validation rather than treating partial runs as successful. This work is ongoing; I do not claim those timing issues are permanently resolved.",
       },
       validation: {
         title: "Testing and validation",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Confirm implemented tests and validation status. Do not imply production readiness or live execution.",
+          "Testing has been central to how I approach EstieMetalsBot. I have worked with native MT5 market data, persisted historical candles, chart inspection, and replay-oriented workflows to examine behaviour under controlled conditions. I have also used structured validation and debugging to investigate analytical outputs and identify inconsistencies. For complex execution workflows, I emphasize reproducibility, explicit failure reporting, and preserving evidence when mandatory checks cannot be completed. This helps me distinguish verified behaviour from functionality that still needs development and testing.",
       },
       outcomes: {
         title: "Outcomes and impact",
         status: "documented",
         content:
-          "The project is in development. No profitability, trading win rate, or production outcome is claimed.",
+          "EstieMetalsBot has allowed me to build a substantial software-engineering foundation for a complex, data-driven application. My work has brought together market-data integration, historical persistence, chart visualization, analytical workflows, and diagnostic tooling within a modular C#/.NET system. The project has strengthened my experience designing applications around reliability, data integrity, traceability, and validation. Development is ongoing, and this foundation supports further testing, refinement, and integration. I make no claim of financial performance or trading results.",
       },
       lessons: {
         title: "Lessons learned",
-        status: "confirmation-needed",
+        status: "documented",
         content:
-          "Add project-specific lessons only after confirmation and disclosure review.",
+          "Building EstieMetalsBot has strengthened my understanding of developing complex, interconnected systems. Reliable applications need more than individual components that work in isolation: they need clear architectural boundaries, consistent data, dependable communication, and predictable failure handling. Working with market data reinforced the importance of accurate timestamps, persistence, and data integrity. Diagnostic tools showed me how much observability matters when investigating complex behaviour. Extended validation has also strengthened my approach to debugging, reproducible testing, and evidence-based development. The project continues to improve my ability to translate complex requirements into maintainable software through disciplined, incremental engineering.",
       },
+    },
+    editorialCaseStudy: {
+      focus: [
+        {
+          title: "Market Data",
+          description: "Ingestion, validation, and persistence.",
+        },
+        {
+          title: "Architecture",
+          description: "Modular C#/.NET components.",
+        },
+        {
+          title: "Visualization",
+          description: "Charts, historical replay, and diagnostics.",
+        },
+        {
+          title: "Reliability",
+          description: "Testing, validation, and safeguards.",
+        },
+      ],
+      overview: [
+        "I started EstieMetalsBot to engineer a structured and maintainable application capable of processing financial market information and supporting rule-based trading decisions.",
+        "Rather than placing all the application logic inside a trading terminal, I designed the system around a dedicated C#/.NET engine with separate responsibilities for market-data handling, analysis, persistence, visualization, risk controls, and external integrations.",
+        "I have also focused on building tools that make complex application behaviour easier to observe, inspect, and validate. The application remains under active development, with particular attention to correctness, reliability, and controlled progression toward automated execution.",
+      ],
+      objectives: [
+        "Establish dependable market-data acquisition, validation, and persistence workflows.",
+        "Separate analytical responsibilities from external trading infrastructure.",
+        "Build reusable components for market analysis.",
+        "Develop visual interfaces for inspecting market conditions and application behaviour.",
+        "Incorporate risk-awareness and operational safeguards into the application architecture.",
+        "Create repeatable testing and historical replay workflows.",
+        "Design maintainable components that support future development.",
+      ],
+      contributions: [
+        "Designed the C#/.NET application architecture.",
+        "Developed market-data processing components.",
+        "Integrated market-data communication with MetaTrader 5.",
+        "Implemented data validation and PostgreSQL persistence workflows.",
+        "Worked on chart visualization and historical replay capabilities.",
+        "Developed tools for inspecting analytical outputs and system behaviour.",
+        "Implemented and validated rule-based analytical workflows.",
+        "Defined safety-oriented engineering requirements.",
+        "Investigated technical failures and improved validation procedures.",
+        "Organized development into manageable, verifiable engineering milestones.",
+      ],
+      architecture: [
+        "I designed EstieMetalsBot around a dedicated C#/.NET engine responsible for application orchestration and analytical logic.",
+        "The application integrates with MetaTrader 5 through a thin MQL5 bridge, allowing market information to reach the .NET engine without placing every decision-making responsibility inside the trading terminal.",
+        "For market-data management, I worked with broker-native candles across multiple timeframes, validation workflows, and PostgreSQL-backed historical persistence. Charting and replay use persisted market information for visualization, historical inspection, and controlled analytical testing.",
+        "Separating these responsibilities makes the application easier to understand, test, maintain, and extend.",
+      ],
+      architectureHighlights: [
+        {
+          title: "C#/.NET Engine",
+          description: "Application orchestration, domain logic, and analytical workflows.",
+        },
+        {
+          title: "MT5/MQL5 Integration",
+          description: "Market-data communication and external trading-system integration.",
+        },
+        {
+          title: "PostgreSQL",
+          description: "Historical market-data storage and persistence.",
+        },
+        {
+          title: "Charting and Replay",
+          description: "Visualization, historical inspection, and diagnostic workflows.",
+        },
+      ],
+      decisions: [
+        "One of my most important architectural decisions was to separate the analytical engine from the trading terminal. This separation allows important application behaviour to be developed, inspected, and validated independently of external execution.",
+        "I also chose to maintain validated historical market information instead of relying entirely on transient data. For charting and historical inspection, I worked with broker-native timestamps and persisted candle data to improve consistency between source information and visual representation.",
+        "Another important decision was to keep historical replay and analytical validation separate from live trading operations. These architectural boundaries reduce unnecessary coupling and support safer development, debugging, and future extensibility.",
+      ],
+      challenges: [
+        {
+          title: "Managing complex application responsibilities",
+          challenge:
+            "EstieMetalsBot combines market-data processing, analytical logic, persistence, charting, and external integration. Keeping these responsibilities organized presented an architectural challenge.",
+          response:
+            "I addressed this by separating major responsibilities into distinct components with clearer integration boundaries. This improved the structure of the application and made individual subsystems easier to reason about and validate.",
+        },
+        {
+          title: "Maintaining market-data consistency",
+          challenge:
+            "Processing financial market data required careful attention to candle timestamps, timeframe consistency, and historical data integrity.",
+          response:
+            "I worked on validation and persistence workflows for broker-native market data, making that information available to charting and historical inspection components. This established a more consistent foundation for visualization and repeatable analysis.",
+        },
+        {
+          title: "Reliability during extended validation",
+          challenge:
+            "Long-running validation workflows exposed recurring timing-related problems and execution inconsistencies.",
+          response:
+            "I investigated these issues through controlled testing, evidence inspection, and incremental debugging. Rather than treating incomplete runs as successful results, I maintained strict validation boundaries and worked on safer, more traceable continuation procedures. Resolving these issues remains ongoing.",
+        },
+      ],
+      validation: {
+        narrative: [
+          "I have worked with native MT5 market data, persisted historical candles, chart inspection, and replay-oriented workflows to examine application behaviour under controlled conditions.",
+          "I have also used structured validation and debugging to investigate analytical outputs and identify inconsistencies. For complex execution workflows, I emphasize reproducibility, explicit failure reporting, and preserving evidence when mandatory checks cannot be completed.",
+          "This approach helps me distinguish verified application behaviour from functionality that still requires further development and testing.",
+        ],
+        highlights: [
+          "Market-data validation",
+          "Historical data consistency",
+          "Chart and replay verification",
+          "Structured debugging",
+          "Repeatable tests",
+          "Failure reporting",
+          "Controlled development milestones",
+        ],
+      },
+      outcomes: {
+        narrative: [
+          "EstieMetalsBot has allowed me to build a substantial software-engineering foundation for a complex, data-driven application. My work has brought together market-data integration, historical persistence, chart visualization, analytical workflows, and diagnostic tooling within a modular C#/.NET system.",
+          "The project has strengthened my experience designing applications around reliability, data integrity, traceability, and validation. Although development is ongoing, this foundation supports further testing, refinement, and integration.",
+        ],
+        highlights: [
+          "Modular C#/.NET application architecture",
+          "Broker-native market-data processing",
+          "PostgreSQL-backed historical data workflows",
+          "Chart visualization and historical replay capabilities",
+          "Rule-based analysis and diagnostic tooling",
+          "Structured testing and validation procedures",
+        ],
+      },
+      lessons: [
+        "Building EstieMetalsBot has strengthened my understanding of what it takes to develop complex, interconnected software systems. Reliable applications require clear architectural boundaries, consistent data, dependable communication, and predictable failure handling.",
+        "Working with market data reinforced the importance of accurate timestamps, persistence, and data integrity. Developing visual diagnostic tools helped me appreciate the role of observability when investigating complex application behaviour.",
+        "The challenges encountered during extended validation strengthened my approach to debugging, reproducible testing, and evidence-based development. Most importantly, the project continues to improve my ability to translate complex requirements into maintainable software through disciplined, incremental engineering.",
+      ],
     },
   },
   {

@@ -73,7 +73,7 @@ export default function ProjectCaseStudy({
           </ul>
         )}
         <div className="mt-6 flex flex-wrap gap-3">
-          {project.liveLink && (
+          {project.liveLink && !project.livePreviewEligible && (
             <Link
               className="button-primary"
               href={project.liveLink}
@@ -144,7 +144,11 @@ export default function ProjectCaseStudy({
       </div>
 
       {project.liveLink && project.livePreviewEligible && (
-        <ProjectLivePreview projectName={project.title} url={project.liveLink} />
+        <ProjectLivePreview
+          projectName={project.title}
+          url={project.liveLink}
+          variant="case-study"
+        />
       )}
 
       <nav aria-label="Related projects" className="mt-12 border-t border-line pt-8">
