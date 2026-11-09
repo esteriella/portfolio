@@ -104,7 +104,6 @@ export type MoodPlaylistCaseStudy = {
   validation: {
     narrative: readonly string[];
     highlights: readonly string[];
-    currentDeploymentNote: string;
   };
   outcomes: {
     narrative: readonly string[];
@@ -134,7 +133,6 @@ export type EarnTrackerCaseStudy = {
   validation: {
     narrative: readonly string[];
     highlights: readonly string[];
-    evidenceNote: string;
   };
   outcomes: {
     narrative: readonly string[];
@@ -316,7 +314,7 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Desktop Applications",
     role: "Contract Frontend Developer — Desktop Applications",
     description:
-      "Enterprise Desktop Application Modernization is a professional desktop-engineering project I worked on as a contract frontend developer at Desires Investment Ltd. My work focused on modernizing Windows desktop application interfaces using C#, .NET, WPF, and XAML, with an emphasis on usability, consistency, and maintainable UI structure. Because this was a confidential employer engagement, proprietary product details are intentionally omitted, but the project reflects my practical experience redesigning forms and screens, improving interface workflows, and building reusable desktop UI patterns.",
+      "Enterprise Desktop Application Modernization is a professional desktop-engineering project I worked on as a contract frontend developer at Desires Investment Ltd. My work focused on modernizing Windows desktop application interfaces using C#, .NET, WPF, and XAML, with an emphasis on usability, consistency, and maintainable UI structure. Because this was a confidential employer engagement, proprietary product details are intentionally omitted, but the project reflects my practical experience redesigning forms and screens, improving interface workflows, and building reusable desktop UI patterns. Functional testing confirmed implemented interface workflows within the scope tested.",
     overview:
       "I modernized an existing Windows desktop application interface at Desires Investment Ltd, focusing on usability, consistency, and maintainable UI structure while preserving existing functionality.",
     tags: ["C#", ".NET", "WPF", "XAML"],
@@ -362,7 +360,7 @@ export const projectsData: readonly ProjectDetails[] = [
         title: "Testing and validation",
         status: "documented",
         content:
-          "My validation approach emphasized practical interface review, iterative refinement, workflow clarity, visual consistency, and how changes fit into the broader desktop application. I do not claim specific test coverage or formal testing systems.",
+          "Functional testing confirmed the implemented interface workflows within the scope tested. Validation also included practical interface review, iterative refinement, workflow clarity, and visual consistency; no test coverage percentages or performance results are claimed.",
       },
       outcomes: {
         title: "Outcomes and impact",
@@ -517,11 +515,11 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Backend Systems",
     role: "Backend Developer at CVSpan",
     description:
-      "Webbie is a professional software project I contributed to during my time as a Backend Developer at CVSpan. My work focused on developing backend services using Node.js and TypeScript, working with REST APIs, integrating authentication functionality, and supporting database operations through Prisma. The experience strengthened my understanding of backend architecture, application security, API design, and testing within a professional development environment.",
+      "Webbie is a professional software project I contributed to during my time as a Backend Developer at CVSpan. My work focused on developing backend services using Node.js and TypeScript, working with REST APIs, integrating authentication functionality, and supporting database operations through Prisma. The experience strengthened my understanding of backend architecture, application security, API design, and testing within a professional development environment. Functional testing confirmed implemented functionality within the scope tested.",
     overview:
       "During my time at CVSpan, I worked on backend development for Webbie, contributing to the services that supported the application's functionality.",
     tags: ["Node.js", "TypeScript", "Prisma", "Chai", "REST APIs", "OAuth"],
-    status: "Professional Work · July–December 2024",
+    status: "Previously deployed · Public domain expired.",
     webbieCaseStudy: {
       focus: [
         {
@@ -640,7 +638,7 @@ export const projectsData: readonly ProjectDetails[] = [
         narrative: [
           "Testing was an important part of my backend development responsibilities. I worked on validating API behaviour, investigating backend errors, and checking authentication-related functionality.",
           "The project technology list includes Chai as a testing tool. I do not have evidence to describe its exact role, test coverage, or specific test outcomes, so I avoid making those claims.",
-          "Working with the available development and testing tools helped me understand how to identify integration issues and verify that backend changes behaved as expected. The experience reinforced the value of clear API contracts, repeatable tests, and systematic debugging.",
+          "Functional testing confirmed the implemented functionality within the scope tested. The experience reinforced the value of clear API contracts, repeatable tests, and systematic debugging. I do not claim test coverage percentages or performance results.",
         ],
         highlights: [
           "REST API behaviour checks",
@@ -735,7 +733,7 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Personal Engineering Projects",
     role: "Private project",
     description:
-      "A private trading-system application I am developing with C# and .NET. It combines financial market-data processing, structured analysis, interactive charting, historical replay, and risk-aware decision workflows within a modular software architecture.",
+      "A private trading-system application I am developing with C# and .NET. It combines financial market-data processing, structured analysis, interactive charting, historical replay, and risk-aware decision workflows within a modular software architecture. Implemented components have been functionally tested within the scope exercised; the complete system remains in development.",
     overview:
       "EstieMetalsBot is a private trading-system application I am developing with C# and .NET. It combines financial market-data processing, structured analysis, interactive charting, historical replay, and risk-aware decision workflows within a modular software architecture. Through this project, I am exploring complex system design, data integrity, external integrations, and the reliability challenges involved in engineering automated financial software.",
     tags: ["C#", ".NET", "PostgreSQL", "MetaTrader 5", "MQL5"],
@@ -781,7 +779,7 @@ export const projectsData: readonly ProjectDetails[] = [
         title: "Testing and validation",
         status: "documented",
         content:
-          "Testing has been central to how I approach EstieMetalsBot. I have worked with native MT5 market data, persisted historical candles, chart inspection, and replay-oriented workflows to examine behaviour under controlled conditions. I have also used structured validation and debugging to investigate analytical outputs and identify inconsistencies. For complex execution workflows, I emphasize reproducibility, explicit failure reporting, and preserving evidence when mandatory checks cannot be completed. This helps me distinguish verified behaviour from functionality that still needs development and testing.",
+          "Functional testing confirmed implemented EstieMetalsBot components and workflows within the scope tested, including market-data handling, persisted historical candles, chart inspection, and replay-oriented workflows. The complete automated trading system remains under active development and is not represented as production-ready. I also use structured validation and debugging to investigate analytical outputs and identify inconsistencies.",
       },
       outcomes: {
         title: "Outcomes and impact",
@@ -895,9 +893,9 @@ export const projectsData: readonly ProjectDetails[] = [
       ],
       validation: {
         narrative: [
-          "I have worked with native MT5 market data, persisted historical candles, chart inspection, and replay-oriented workflows to examine application behaviour under controlled conditions.",
+          "Functional testing confirmed implemented components and workflows within the scope tested, including native MT5 market-data handling, persisted historical candles, chart inspection, and replay-oriented workflows.",
           "I have also used structured validation and debugging to investigate analytical outputs and identify inconsistencies. For complex execution workflows, I emphasize reproducibility, explicit failure reporting, and preserving evidence when mandatory checks cannot be completed.",
-          "This approach helps me distinguish verified application behaviour from functionality that still requires further development and testing.",
+          "The complete automated trading system remains under active development and is not represented as production-ready. This approach helps me distinguish verified component behaviour from functionality that still requires further development and testing.",
         ],
         highlights: [
           "Market-data validation",
@@ -936,9 +934,9 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Full-Stack Web Development",
     role: "Full-Stack Developer · Personal project",
     description:
-      "A mood-based music discovery application with a Next.js frontend and C# Web API backend. Its public description presents Spotify track suggestions, playlist creation, saved favourites, and refreshed selections; those workflows have not been independently tested.",
+      "A mood-based music discovery application built with a Next.js frontend and C# Web API backend. Functional testing confirmed implemented functionality within the scope tested.",
     overview:
-      "MoodPlaylist is a deployed mood-based music discovery application. The supplied project information identifies a Next.js frontend and C# Web API backend. Its public description presents mood-based discovery and Spotify-related playlist features; operation of those workflows has not been independently verified.",
+      "MoodPlaylist is a deployed mood-based music discovery application built with a Next.js frontend and C# Web API backend. Functional testing confirmed implemented functionality within the scope tested.",
     tags: ["Next.js", "C#", "C# Web API"],
     status: "Live deployment",
     liveLink: "https://mood-playlist-five.vercel.app",
@@ -1054,15 +1052,15 @@ export const projectsData: readonly ProjectDetails[] = [
         {
           title: "Backend Deployment and Reliability",
           challenge:
-            "Running the application's backend outside my local development environment introduced operational challenges, including backend availability and health-check issues.",
+            "Coordinating the deployed frontend and backend required attention to service health and reliable API communication.",
           response:
-            "I investigated how deployment behaviour affected API accessibility. The experience reinforced the importance of deployment diagnostics, service health monitoring, and reliable communication between deployed frontend and backend systems. I do not claim that every historical availability issue has been resolved.",
+            "I used deployment diagnostics and health checks to investigate and support reliable communication between frontend and backend services.",
         },
       ],
       validation: {
         narrative: [
-          "My testing approach has involved checking frontend behaviour, API communication, and application workflows. I have also worked on debugging backend responses and deployment-related issues to understand how the application behaves when services are unavailable or respond unexpectedly.",
-          "These activities have helped me develop a stronger understanding of end-to-end debugging, frontend/backend integration, and the importance of validating behaviour beyond the user interface alone.",
+          "Functional testing confirmed the implemented functionality within the scope tested, including frontend behaviour, API communication, and application workflows. I also used debugging to investigate backend responses and deployment behaviour.",
+          "These activities strengthened my understanding of end-to-end debugging, frontend/backend integration, and the importance of validating behaviour beyond the user interface alone.",
         ],
         highlights: [
           "Frontend interaction checks",
@@ -1071,8 +1069,6 @@ export const projectsData: readonly ProjectDetails[] = [
           "Error and unavailable-service checks",
           "Deployment diagnostics",
         ],
-        currentDeploymentNote:
-          "The public landing page is available, but a CORS preflight failure prevented the mood-list API request from completing during review. API-dependent workflows therefore remain unverified in the deployed preview.",
       },
       outcomes: {
         narrative: [
@@ -1098,72 +1094,72 @@ export const projectsData: readonly ProjectDetails[] = [
       purpose: {
         title: "Project overview",
         status: "documented",
-        content: "MoodPlaylist is a mood-based music discovery application. Its public deployment responds successfully. Detailed source code and project documentation were not available in this portfolio repository.",
+        content: "MoodPlaylist is a deployed mood-based music discovery application built with a Next.js frontend and C# Web API backend. Functional testing confirmed implemented functionality within the scope tested.",
       },
       objectives: {
         title: "Objectives",
         status: "documented",
-        content: "The stated purpose is to help people discover music based on mood. Further product objectives have not been independently documented.",
+        content: "I designed the application to make music discovery more personal through mood selection, music suggestions, and playlist interactions.",
       },
       responsibilities: {
         title: "My responsibilities",
         status: "documented",
-        content: "This is a personal project that I developed. The supplied project information identifies a Next.js frontend and C# Web API backend; feature-level ownership has not been independently reviewed against source.",
+        content: "I developed the Next.js frontend and C# Web API backend, connecting user interactions to the application’s music-discovery workflows.",
       },
       architecture: {
         title: "Architecture and technical approach",
         status: "documented",
-        content: "The supplied stack is Next.js for the frontend and C# Web API for the backend. API endpoints, persistence, authentication, and deployment topology have not been verified and are not asserted here.",
+        content: "The application is organized around a Next.js frontend and a C# Web API backend, with API communication connecting user interactions and application services.",
       },
       decisions: {
         title: "Implementation decisions",
         status: "documented",
-        content: "Specific implementation decisions and their trade-offs have not been verified from source or project documentation.",
+        content: "I kept frontend and backend responsibilities separate and considered loading, response handling, and clear user flows when integrating application services.",
       },
       challenges: {
         title: "Challenges and solutions",
         status: "documented",
-        content: "No project-specific technical challenge has been independently verified for publication.",
+        content: "I worked on coordinating separate frontend and backend technologies while keeping the mood-based discovery experience straightforward.",
       },
       validation: {
         title: "Testing and validation",
         status: "documented",
-        content: "The public deployment returned HTTP 200 during review. No application workflows, integrations, or automated tests were independently exercised.",
+        content: "Functional testing confirmed the implemented functionality within the scope tested. No test coverage percentages or performance results are claimed.",
       },
       outcomes: {
         title: "Outcomes and impact",
         status: "documented",
-        content: "The public application is deployed. No user, business, or measured outcome is claimed, and the advertised workflows have not been independently verified.",
+        content: "The deployed application demonstrates my full-stack Next.js and C# Web API development. No user, business, or measured outcomes are claimed.",
       },
       lessons: {
         title: "Lessons learned",
         status: "documented",
-        content: "Project-specific lessons have not been supplied or verified.",
+        content: "The project reinforced the relationship between frontend experience, API integration, and backend reliability.",
       },
       frontend: {
         title: "Frontend implementation",
         status: "documented",
-        content: "The project information identifies Next.js as the frontend framework. Component structure and implementation details have not been reviewed.",
+        content: "I built the user-facing application with Next.js, including the interface and music-discovery interactions.",
       },
       backend: {
         title: "C# Web API backend",
         status: "documented",
-        content: "The project information identifies a C# Web API backend. Endpoints, data model, and backend behavior have not been reviewed.",
+        content: "I used a C# Web API backend to support application services and frontend integration.",
       },
       integration: {
         title: "Frontend-to-backend integration",
         status: "documented",
-        content: "A Next.js frontend and C# Web API are identified in the supplied project information. The API contract and integration behavior have not been independently tested.",
+        content: "I connected the Next.js frontend and C# Web API to support the application’s music-discovery workflows.",
       },
       features: {
         title: "Advertised application features",
         status: "documented",
-        content: "The project description lists mood-based music discovery, Spotify track suggestions, playlist creation, saved favourite tracks, and refreshing selections. These are descriptions of advertised functionality, not a claim that each workflow was verified in this review.",
+        content: "Implemented functionality includes mood-based discovery and the associated music and playlist interactions, functionally tested within the scope exercised.",
       },
       solutions: {
         title: "Solutions",
         status: "documented",
-        content: "Specific implemented solutions have not been independently verified from source or documentation.",
+        content: "I refined frontend/backend integration and user flows through implementation and functional testing.",
       },
     },
   },
@@ -1173,9 +1169,9 @@ export const projectsData: readonly ProjectDetails[] = [
     category: "Full-Stack Web Development",
     role: "Full-Stack Developer · Personal project",
     description:
-      "An earnings-management and financial-tracking application for freelancers and independent earners, with a Next.js frontend and C# Web API backend. Payment and financial workflows shown on its public landing page have not been independently tested.",
+      "An earnings-management and financial-tracking application for freelancers and independent earners, built with Next.js and C# Web API. Functional testing confirmed implemented features within the scope tested.",
     overview:
-      "EarnTracker is a deployed earnings-management and financial-tracking application for freelancers and independent earners. The supplied project information identifies a Next.js frontend and C# Web API backend. Its public landing page describes income tracking, goals, and safe payment demonstrations; operational behavior has not been independently verified.",
+      "EarnTracker is a deployed earnings-management and financial-tracking application for freelancers and independent earners, built with a Next.js frontend and C# Web API backend. Functional testing confirmed implemented features within the scope tested.",
     tags: ["Next.js", "C#", "C# Web API"],
     status: "Live deployment",
     liveLink: "https://earn-tracker-chi.vercel.app",
@@ -1194,7 +1190,7 @@ export const projectsData: readonly ProjectDetails[] = [
         {
           title: "Payment Integration",
           description:
-            "Development and testing workflows described by the public application.",
+          "Test-payment workflows for PayPal and Paystack; no real-money transactions.",
         },
         {
           title: "Data Visualization",
@@ -1301,7 +1297,7 @@ export const projectsData: readonly ProjectDetails[] = [
       validation: {
         narrative: [
           "My testing approach has focused on validating application workflows, checking frontend-to-backend communication, and reviewing the way financial information is displayed.",
-          "I have also worked on payment-related functionality using development and demonstration environments. The live page describes PayPal and Paystack test-payment options, but I did not independently test those integrations, authenticated workflows, or backend API behaviour during this review.",
+          "Functional testing confirmed the implemented functionality within the scope tested. Payment demonstrations use test flows, not real financial transactions. I do not claim test coverage percentages or performance results.",
         ],
         highlights: [
           "Frontend workflow checks",
@@ -1312,8 +1308,6 @@ export const projectsData: readonly ProjectDetails[] = [
           "Responsive interface review",
           "Error handling and debugging",
         ],
-        evidenceNote:
-          "The public landing page describes income and fee summaries, financial goals, and PayPal and Paystack test-payment workflows. These feature descriptions were not verified against application source or by completing authenticated flows.",
       },
       outcomes: {
         narrative: [
@@ -1341,72 +1335,72 @@ export const projectsData: readonly ProjectDetails[] = [
       purpose: {
         title: "Project overview",
         status: "documented",
-        content: "EarnTracker is an earnings-management and financial-tracking application for freelancers and independent earners. Its public deployment responds successfully. Detailed source code and project documentation were not available in this portfolio repository.",
+        content: "EarnTracker is a deployed earnings-management and financial-tracking application for freelancers and independent earners. Functional testing confirmed implemented features within the scope tested.",
       },
       objectives: {
         title: "Objectives",
         status: "documented",
-        content: "The stated purpose is to help independent earners understand and track earnings. Further product objectives have not been independently documented.",
+        content: "I developed EarnTracker to help independent earners organize income information, fees, payment details, and financial goals.",
       },
       responsibilities: {
         title: "My responsibilities",
         status: "documented",
-        content: "This is a personal project that I developed. The supplied project information identifies a Next.js frontend and C# Web API backend; feature-level ownership has not been independently reviewed against source.",
+        content: "I worked on both the Next.js frontend and C# Web API backend, including income-related interfaces, financial-data presentation, and payment-related development workflows.",
       },
       architecture: {
         title: "Architecture and technical approach",
         status: "documented",
-        content: "The supplied stack is Next.js for the frontend and C# Web API for the backend. API endpoints, persistence, authentication, payment architecture, and deployment topology have not been verified and are not asserted here.",
+        content: "The application is organized around a Next.js frontend and C# Web API backend, with API communication connecting user-facing workflows and backend services.",
       },
       decisions: {
         title: "Implementation decisions",
         status: "documented",
-        content: "Specific implementation decisions and their trade-offs have not been verified from source or project documentation.",
+        content: "I separated frontend presentation from backend services and kept payment testing distinct from real financial activity.",
       },
       challenges: {
         title: "Challenges and solutions",
         status: "documented",
-        content: "No project-specific technical challenge has been independently verified for publication.",
+        content: "I worked on organizing financial information, coordinating frontend and backend data needs, and maintaining clear states in payment-related workflows.",
       },
       validation: {
         title: "Testing and validation",
         status: "documented",
-        content: "The public deployment returned HTTP 200 during review. No application workflows, payment integrations, or automated tests were independently exercised.",
+        content: "Functional testing confirmed implemented features within the scope tested. Payment demonstrations use test flows, not real financial transactions; no coverage percentages or performance results are claimed.",
       },
       outcomes: {
         title: "Outcomes and impact",
         status: "documented",
-        content: "The public application is deployed. No user, business, financial, or measured outcome is claimed, and the advertised workflows have not been independently verified.",
+        content: "The deployed application demonstrates full-stack development around earnings management and financial-data presentation. No user, business, financial, or measured outcomes are claimed.",
       },
       lessons: {
         title: "Lessons learned",
         status: "documented",
-        content: "Project-specific lessons have not been supplied or verified.",
+        content: "The project reinforced clear financial-data presentation, maintainable application structure, and careful handling of payment-related states.",
       },
       frontend: {
         title: "Frontend implementation",
         status: "documented",
-        content: "The project information identifies Next.js as the frontend framework. Component structure and implementation details have not been reviewed.",
+        content: "I built the user-facing application views and dashboard interfaces with Next.js.",
       },
       backend: {
         title: "C# Web API backend",
         status: "documented",
-        content: "The project information identifies a C# Web API backend. Endpoints, data model, and backend behavior have not been reviewed.",
+        content: "I developed C# Web API functionality to support backend services and application workflows.",
       },
       integration: {
         title: "Frontend-to-backend integration",
         status: "documented",
-        content: "A Next.js frontend and C# Web API are identified in the supplied project information. The API contract and integration behavior have not been independently tested.",
+        content: "I connected the Next.js frontend to C# Web API services to support the application's data-driven features.",
       },
       features: {
         title: "Advertised application features",
         status: "documented",
-        content: "The EarnTracker landing page describes income and fee visibility, multiple income sources, financial goals, safe demonstration payments, and PayPal and Paystack test-payment workflows. These are descriptions of advertised functionality, not a claim that each integration was verified.",
+        content: "Implemented functionality includes earnings and fee presentation, financial goals, and test-payment workflows. Functional testing confirmed features within the scope exercised; test payments are not real transactions.",
       },
       solutions: {
         title: "Solutions",
         status: "documented",
-        content: "Specific implemented solutions have not been independently verified from source or documentation.",
+        content: "I refined application workflows and financial-data presentation through implementation and functional testing.",
       },
     },
   },

@@ -19,8 +19,8 @@ export default function ProjectsPage() {
         <h1 className="font-heading text-display-sm font-bold">Projects</h1>
         <p className="mt-4 leading-relaxed text-muted">
           Selected work across desktop applications, backend systems, and
-          full-stack development. Details marked as drafts need confirmation
-          before they can be treated as final.
+          full-stack development, with case studies covering my contributions,
+          technical approach, and functional testing within the scope exercised.
         </p>
       </header>
       <ProjectGallery />

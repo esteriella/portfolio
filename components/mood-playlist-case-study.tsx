@@ -289,10 +289,6 @@ export default function MoodPlaylistCaseStudy({
               </li>
             ))}
           </ul>
-          <p className="editorial-deployment-note mt-5" role="note">
-            <strong>Current deployment note:</strong>{" "}
-            {content.validation.currentDeploymentNote}
-          </p>
         </div>
       </section>
 

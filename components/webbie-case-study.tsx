@@ -51,6 +51,7 @@ export default function WebbieCaseStudy({
         </p>
         <p className="mt-2 font-medium">Backend Developer · CVSpan</p>
         <p className="mt-1 text-muted">July–December 2024</p>
+        <p className="mt-1 text-muted">{project.status}</p>
         <div className="editorial-hero-copy mt-6">
           {content.hero.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

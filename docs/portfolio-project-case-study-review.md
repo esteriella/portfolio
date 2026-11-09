@@ -2,7 +2,7 @@
 
 The approved public inventory is Enterprise Desktop Application Modernization, Webbie, EstieMetalsBot, MoodPlaylist, and EarnTracker. Wallet System, Chat App, YelpCamp, Weather App, and EstieInvest are not included in the public project gallery. Existing source and Git history are retained.
 
-The MoodPlaylist and EarnTracker case studies use the supplied project information and visibly separate landing-page descriptions from independently verified behavior. Their public landing pages responded successfully during review. No authenticated actions, payment workflows, or source repositories were inspected. Both pages remain indexable because they publish their limitations explicitly and do not depend on iframe content.
+The MoodPlaylist and EarnTracker case studies use the supplied project information. The project owner has confirmed functional testing of implemented features within the scope tested; this review did not independently test authenticated actions, payment workflows, or source repositories. Their public landing pages responded successfully during review. Both pages remain indexable and do not depend on iframe content.
 
 The projects in the approved inventory that still contain sections marked **Draft · confirmation needed** remain `noindex, follow` until their claims can be confirmed.
 
@@ -66,7 +66,7 @@ The projects in the approved inventory that still contain sections marked **Draf
 ### Not independently verified
 
 - Authenticated workflows, Spotify integration behavior, API contract, persistence, implementation details, tests, and measurable outcomes.
-- The iframe successfully rendered the public landing page in a local production browser check; its interactive workflow has not been verified.
+- The iframe successfully rendered the public landing page in a local production browser check. The project owner has since confirmed functional testing of implemented functionality within the scope tested; this review did not independently exercise the full application workflow.
 
 ## EarnTracker
 
@@ -86,4 +86,4 @@ The projects in the approved inventory that still contain sections marked **Draf
 
 - Category-filtered project gallery and static detail routes expose the five approved projects.
 - MoodPlaylist and EarnTracker have unique metadata, canonical paths, Open Graph/social-card data, breadcrumbs, sitemap inclusion, and opt-in previews.
-- No preview is loaded until a visitor requests it. Browser checks confirmed each public landing-page H1 rendered in its iframe and closing the preview removed the iframe. Application workflows were not tested.
+- No preview is loaded until a visitor requests it. Browser checks confirmed each public landing-page H1 rendered in its iframe and closing the preview removed the iframe. The project owner confirms functional testing of implemented features within the scope tested; payment demonstrations are test flows, not real transactions.

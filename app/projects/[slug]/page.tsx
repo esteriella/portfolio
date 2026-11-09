@@ -39,7 +39,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return createPageMetadata({
       title: "Webbie — Backend Engineering with Node.js & TypeScript | Opeyemi Agbaje",
       description:
-        "Explore my backend-development contributions to Webbie at CVSpan, involving Node.js, TypeScript, REST APIs, OAuth integration, Prisma, and API testing.",
+        "Webbie backend work at CVSpan: Node.js, TypeScript, REST APIs, OAuth, Prisma, and functional testing. Previously deployed · Public domain expired.",
       path: canonical,
       type: "article",
       index: true,
@@ -50,7 +50,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return createPageMetadata({
       title: "EarnTracker — Next.js & C# Full-Stack Development | Opeyemi Agbaje",
       description:
-        "Explore my work on EarnTracker, a full-stack earnings-management application using Next.js and C# Web API, featuring financial tracking, dashboard development, and payment-related integrations.",
+        "Explore EarnTracker, a Next.js and C# Web API earnings-management app. Functional testing confirmed implemented features within the scope tested.",
       path: canonical,
       type: "article",
       index: true,
@@ -61,7 +61,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return createPageMetadata({
       title: "MoodPlaylist — Next.js & C# Full-Stack Development | Opeyemi Agbaje",
       description:
-        "Explore my development of MoodPlaylist, a mood-based music discovery application built with Next.js and C# Web API, highlighting user experience, API integration, and full-stack engineering.",
+        "Explore MoodPlaylist, a Next.js and C# Web API music discovery app. Functional testing confirmed implemented features within the scope tested.",
       path: canonical,
       type: "article",
       index: true,
@@ -72,7 +72,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return createPageMetadata({
       title: "Enterprise Desktop Application Modernization | Opeyemi Agbaje",
       description:
-        "Explore my desktop-engineering work modernizing a Windows application interface with C#, .NET, WPF, and XAML, focusing on usability, consistency, and maintainable UI design.",
+        "Explore my C#/.NET, WPF, and XAML desktop UI work at Desires Investment Ltd. Functional testing confirmed implemented interface workflows within the scope tested.",
       path: canonical,
       type: "article",
       index: true,
@@ -83,7 +83,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return createPageMetadata({
       title: "EstieMetalsBot — C#/.NET Trading Systems Engineering | Opeyemi Agbaje",
       description:
-        "Explore my engineering work on EstieMetalsBot, a private C#/.NET trading-system project involving market-data processing, PostgreSQL, MT5 integration, visualization, and reliability-focused development.",
+        "Explore EstieMetalsBot, a private C#/.NET trading-system project under active development. Components have been functionally tested within scope; the full system is not production-ready.",
       path: canonical,
       type: "article",
       index: true,

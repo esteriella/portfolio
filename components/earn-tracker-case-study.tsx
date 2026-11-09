@@ -295,10 +295,6 @@ export default function EarnTrackerCaseStudy({
               </li>
             ))}
           </ul>
-          <p className="editorial-evidence-note mt-5" role="note">
-            <strong>Verification note:</strong>{" "}
-            {content.validation.evidenceNote}
-          </p>
         </div>
       </section>
 
